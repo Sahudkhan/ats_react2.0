@@ -1,25 +1,23 @@
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import Avatar from '@mui/material/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import PersonAdd from '@material-ui/icons/PersonAdd';
 import Settings from '@material-ui/icons/Settings';
 import Logout from '@mui/icons-material/Logout';
-import { ListItemIcon, Tooltip, Grid, Menu, MenuItem, LinearProgress, Typography, Box } from '@material-ui/core';
-
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import { ListItemIcon, Tooltip, Grid, ListItemText, List, ListItem, Popover, LinearProgress, Typography, Box } from '@material-ui/core';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink
-} from "react-router-dom";
+  Nav,
+  NavLink,
+  Bars,
+  NavMenu,
+  NavBtn,
+  NavBtnLink,
+} from '../component/NavbarElements';
+
 
 
 
@@ -47,8 +45,8 @@ const Header = () => {
 
     return (
 <div className={classes.root} >
-     <AppBar className="css-7551ie" style={{ position:"static", backgroundColor:"white", color:"black", boxShadow:"rgb(0 0 0 / 12%) 0rem 0.125rem 0.125rem"}}>
-        <Toolbar>
+     <AppBar className="css-7551ie sahud" style={{ position:"sticky", backgroundColor:"white", color:"black", boxShadow:"rgb(0 0 0 / 12%) 0rem 0.125rem 0.125rem"}}>
+       
         <Grid container>
         <Grid item md={2}>
            <Typography variant="h6" className={classes.title}>
@@ -60,42 +58,22 @@ const Header = () => {
        
          
           <Grid item md={8}  align = "center" justify = "center" alignItems = "center" >
-          {/* <NavLink exact activeClassName="active_class" to="/Dashboard">Dashboard</NavLink>
-          <NavLink exact activeClassName="active_class" to="/jobs/Myjobs">Jobs</NavLink>
-          <NavLink exact activeClassName="active_class" to="/Candidates">Candidates</NavLink>
-          <NavLink exact activeClassName="active_class" to="/Workflow">Workflow</NavLink>
-          <NavLink exact activeClassName="active_class" to="/Analytics">Analytics</NavLink>
-          <NavLink exact activeClassName="active_class" to="/Requisition">Requisition</NavLink>
-          <NavLink exact activeClassName="active_class" to="/Interview">Interview</NavLink>
-          <NavLink exact activeClassName="active_class" to="/Settings">Settings</NavLink> */}
-         
-         
-      {/* <Tabs
-        value={value}
-        indicatorColor="primary"
-        textColor="primary"
-        onChange={handleChange}
-        
-      >
-        <Tab className="menuneww" exact label="Dashboard" component={Link} to="/Dashboard"/>
-        <Tab className="menuneww" exact label="Jobs" component={Link} to="/Myjobs" />
-        <Tab className="menuneww" label="Candidates" component={Link} to="/Candidates"/>
-        <Tab className="menuneww" label="Workflow" component={Link} to="/Workflow"/>
-        <Tab className="menuneww" label="Analytics" component={Link} to="/Analytics"/>
-        <Tab className="menuneww" label="Requisition" component={Link} to="/Requisition"/>
-        <Tab className="menuneww" label="Interview" component={Link} to="/Interview"/>
-        <Tab className="menuneww" label="Settings" component={Link} to="/Settings"/>
-      </Tabs> */}
-    
-
-          <Button  className="menuneww" component={Link} to="/Dashboard">Dashboard</Button>
-          <Button  className="menuneww" component={Link} to="/Myjobs">Jobs</Button>
-          <Button  className="menuneww" component={Link} to="/Candidates">Candidates</Button>
-          <Button  className="menuneww" component={Link} to="/Workflow">Workflow</Button>
-          <Button  className="menuneww" component={Link} to="/Analytics">Analytics</Button>
-          <Button  className="menuneww" component={Link} to="/Requisition">Requisition</Button>
-          <Button  className="menuneww" component={Link} to="/Interview">Interview</Button>
-          <Button  className="menuneww" component={Link} to="/Settings">Settings</Button>
+          <Nav>
+        <Bars />
+  
+        <NavMenu>
+      
+          <NavLink exact activeStyle to="/Dashboard">Dashboard</NavLink>
+          <NavLink exact activeStyle to="/Myjobs">Jobs</NavLink>
+          <NavLink exact activeStyle to="/Candidates">Candidates</NavLink>
+          <NavLink exact activeStyle to="/Workflow">Workflow</NavLink>
+          <NavLink exact activeStyle to="/Analytics">Analytics</NavLink>
+          <NavLink exact activeStyle to="/Requisition">Requisition</NavLink>
+          <NavLink exact activeStyle to="/Interview">Interview</NavLink>
+          <NavLink exact activeStyle to="/Settings">Settings</NavLink>
+          </NavMenu>
+       
+       </Nav>
           </Grid>
 
           <Grid item md={2} className = {classes.root} align = "right" justify = "flex-end" alignItems = "flex-end">
@@ -114,65 +92,64 @@ const Header = () => {
           </IconButton>
         </Tooltip>
                          
-        <Menu
+        <Popover
         anchorEl={anchorEl}
         id="account-menu"
         open={open}
         onClose={handleClose}
         onClick={handleClose}
-        PaperProps={{
-          elevation: 0,
-          sx: {
-            overflow: 'visible',
-            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-            mt: 1.5,
-            '& .MuiAvatar-root': {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-            },
-            '&:before': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              top: 0,
-              right: 14,
-              width: 10,
-              height: 10,
-              bgcolor: 'background.paper',
-              transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
-          },
-        }}
+        
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-       
-        <MenuItem>
+       <List className="list-popover">
+        <ListItem className="list-item flex-start-center">
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
-          My Profile
-        </MenuItem>
-        <MenuItem>
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               My Profile
+               </ListItemText>
+        </ListItem>
+        <ListItem className="list-item flex-start-center">
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem>
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >Settings</ListItemText> 
+        </ListItem>
+        <ListItem className="list-item flex-start-center">
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
-        </MenuItem>
-      </Menu>
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >Logout</ListItemText> 
+        </ListItem>
+        </List>
+      </Popover>
                                     </Grid>
  </Grid>
  </Grid>
-        </Toolbar>
+      
         </AppBar>
      
         </div>

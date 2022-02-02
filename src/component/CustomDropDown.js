@@ -13,7 +13,7 @@ const CustomDropDown = (props) => {
     selectedMenu = "All",
     width = 168,
     updateMenu = () => {},
-    height = 20,
+    height = 35,
   } = props;
   const [openPopover, setOpenPopover] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);

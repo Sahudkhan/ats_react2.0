@@ -421,26 +421,24 @@ body {
 }
 
 a.active_class{
-  background-color: aqua;
-  border-bottom: 2px solid #000;
+  background-color:#fff;
+  border-bottom: 2px solid #335AFF;
+  color:#335AFF;
 }
 
 .menuneww{
-  
-  text-transform: capitalize !important;
-  color: inherit;
   position: relative;
   flex-shrink: 0;
-  overflow: hidden;
-  white-space: normal;
   text-align: center;
-  padding: 0px !important;
+  padding: 19px 0px !important;
   margin: 0px 15px !important;
-  opacity: 1 !important;
-  min-height: 60px !important;
-  min-width:72px !important;
-  height: 60px !important;
+  line-height: 60px !important;
   font-family: Poppins, sans-serif !important;
+font-weight: 500;
+font-size: 14px;
+text-decoration: none;
+color: #172B4D;
+
 }
 .calcendar-page {
   padding: 0 4.5%;
@@ -458,7 +456,7 @@ a.active_class{
   background: #ffffff;
   border: 1px solid #ebecf0;
   border-radius: 3px;
-  padding: 2px 12px;
+  padding: 0px 12px;
   cursor: pointer;
 }
 
@@ -493,3 +491,93 @@ a.active_class{
   border: 0px !important;
   outline: none !important;
 }
+
+.list-popover {
+  width: 13.75rem;
+  background-color: #ffffff;
+  cursor: pointer;}
+
+  .list-popover .list-item {
+    width: 100%;
+    height: 48px;
+    cursor: pointer;}
+
+    .list-popover .list-item-icon {
+      min-width: 2rem !important;
+      color: inherit;
+    }
+
+    .list-popover .list-item:hover {
+      background-color: rgba(51, 90, 255, 0.0506993);
+      color: #335aff !important;
+    }
+.cardbox{
+  border: 2px solid #F0F0F0;
+box-sizing: border-box;
+border-radius: 6px !important;
+box-shadow: none !important;
+padding: 20px;
+margin-bottom: 30px;
+}
+.cardbox:hover{background:rgba(248, 248, 248, 0.4);}
+.spacem{
+  margin: 15px 0px !important;
+}
+.numberjobs{
+  font-size: 18px !important;
+  margin-top: 5px !important;
+}
+
+.numberjobs2{
+  font-size: 14px !important;
+  margin-top: 8px !important;
+}
+.header-icon {
+  width: 24px !important;
+  height: 24px !important;
+  color: #172b4d;
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.icon-cover {
+  width: 35px;
+  height:35px;
+  background: #f8f8f8;
+  border-radius: 3px;
+  padding: 0px;
+}
+
+.shareicons{width: 24px;
+  height: 24px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.25rem;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1;
+  user-select: none;
+  border-radius: 50%;
+  justify-content: center;
+  background: #F6F6F6;
+  padding: 5px;}
+
+  .css-sxh3gq-MuiAvatar-root-MuiAvatarGroup-avatar{
+    height:34px !important;
+    width: 34px !important;
+    color: #757575 !important;
+    background: none !important;
+font-size: 14px !important;
+  }
+  
+  .mainheadingall{    position: absolute;
+    left: 60px;
+    top: 22px;}
+
+  .steppermain{
+    padding: 30px 20%;
+  }

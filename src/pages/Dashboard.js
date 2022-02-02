@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { TextField, Paper, Divider, Grid, CardContent, Card, MenuItem, LinearProgress, Typography, Box } from '@material-ui/core';
-
+import SearchComponent from "../component/SearchComponent";
 import Sourcechart from '../component/Sourcechart'; 
 import Locationchart from '../component/Locationchart'
 import Requisitionchart from '../component/Requisitionchart'
@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
   
     Boxnew:{
 backgroundColor:"#F8F8F8",
-height:"97px",
+height:"90px",
 border:"none"
        },
 
@@ -107,8 +107,18 @@ function Dashboard() {
                   
        <Grid className="allcssmain">
         <Grid className={classes.root}>
+        <Box className="w-100 flex-between-center mb-20">
+            <Typography variant="h2">Dashboard</Typography>
+            <div className="flex-center">
+              <Box className="mr-0">
+               <SearchComponent/>
+              </Box>
+             
+            </div>
+          </Box>
+
         <Grid container  spacing={3}>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
           <Grid item xs={12}>
                                 <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
@@ -138,7 +148,7 @@ function Dashboard() {
           </Paper>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
           <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
                                     <Grid item>
@@ -168,14 +178,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 Application
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             30
                                                         </Typography>
                                                     </Grid>
@@ -191,14 +201,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 New
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             20
                                                         </Typography>
                                                     </Grid>
@@ -214,14 +224,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 In Review
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             10
                                                         </Typography>
                                                     </Grid>
@@ -237,14 +247,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 Job Portal
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             30
                                                         </Typography>
                                                     </Grid>
@@ -268,7 +278,7 @@ function Dashboard() {
           </Paper>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
           <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
                                     <Grid item>
@@ -298,14 +308,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 Application
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" color="inherit">
+                                                        <Typography variant="body1" color="inherit">
                                                             45
                                                         </Typography>
                                                     </Grid>
@@ -321,14 +331,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 New
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" color="inherit">
+                                                        <Typography variant="body1" color="inherit">
                                                             500
                                                         </Typography>
                                                     </Grid>
@@ -344,14 +354,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 In Review
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2"  color="inherit">
+                                                        <Typography variant="body1"  color="inherit">
                                                             1000
                                                         </Typography>
                                                     </Grid>
@@ -367,14 +377,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 Job Portal
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" color="inherit">
+                                                        <Typography variant="body1" color="inherit">
                                                             150
                                                         </Typography>
                                                     </Grid>
@@ -397,7 +407,7 @@ function Dashboard() {
           </Paper>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
           <Grid item xs={12}>
                                 <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
@@ -432,7 +442,7 @@ function Dashboard() {
 
           <Grid container  spacing={3}>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
                   <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
                                     <Grid item>
@@ -446,14 +456,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 UI UX Designer
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             30
                                                         </Typography>
                                                     </Grid>
@@ -469,14 +479,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 Internet Security Assistant
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             30
                                                         </Typography>
                                                     </Grid>
@@ -492,14 +502,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 Freshers
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             30
                                                         </Typography>
                                                     </Grid>
@@ -515,14 +525,14 @@ function Dashboard() {
                                     <Grid item>
                                         <Grid container alignItems="center" justifyContent="space-between">
                                             <Grid item>
-                                                <Typography variant="body2" color="inherit">
+                                                <Typography variant="body1" color="inherit">
                                                 Senior Manager
                                                 </Typography>
                                             </Grid>
                                             <Grid item>
                                                 <Grid container alignItems="center" justifyContent="space-between">
                                                     <Grid item>
-                                                        <Typography variant="body2" className={classes.numberbg} color="inherit">
+                                                        <Typography variant="body1" className={classes.numberbg} color="inherit">
                                                             30
                                                         </Typography>
                                                     </Grid>
@@ -548,7 +558,7 @@ function Dashboard() {
 
          
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
           <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
                                     <Grid item>
@@ -563,7 +573,7 @@ function Dashboard() {
           </Paper>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
           <Grid item xs={12}>
                                 <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
@@ -577,40 +587,40 @@ function Dashboard() {
              <Grid className={classes.dashboardscroll}> 
              <Box item xs={12} marginBottom={2}>
              <Grid container alignContent="center" justifyContent="space-between">
-             <Typography variant='body2'>1-3 Years</Typography>
-             <Typography variant='body2'>100</Typography>
+             <Typography variant='body1'>1-3 Years</Typography>
+             <Typography variant='body1'>100</Typography>
              </Grid>
              <StyledLinearProgress variant="determinate" value={80}/>
              </Box>
 
              <Box item xs={12} marginBottom={2}>
              <Grid container alignContent="center" justifyContent="space-between">
-             <Typography variant='body2'>4-8 Years</Typography>
-             <Typography variant='body2'>80</Typography>
+             <Typography variant='body1'>4-8 Years</Typography>
+             <Typography variant='body1'>80</Typography>
              </Grid>
              <StyledLinearProgress variant="determinate" value={70} />
              </Box>
 
              <Box item xs={12} marginBottom={2}>
              <Grid container alignContent="center" justifyContent="space-between">
-             <Typography variant='body2'>8-12 Years</Typography>
-             <Typography variant='body2'>60</Typography>
+             <Typography variant='body1'>8-12 Years</Typography>
+             <Typography variant='body1'>60</Typography>
              </Grid>
              <StyledLinearProgress variant="determinate" value={60} />
              </Box>
 
              <Box item xs={12} marginBottom={2}>
              <Grid container alignContent="center" justifyContent="space-between">
-             <Typography variant='body2'>12-18 Years</Typography>
-             <Typography variant='body2'>40</Typography>
+             <Typography variant='body1'>12-18 Years</Typography>
+             <Typography variant='body1'>40</Typography>
              </Grid>
              <StyledLinearProgress variant="determinate" value={40} />
              </Box>
 
              <Box item xs={12}>
              <Grid container alignContent="center" justifyContent="space-between">
-             <Typography variant='body2'>18-20 Years</Typography>
-             <Typography variant='body2'>80</Typography>
+             <Typography variant='body1'>18-20 Years</Typography>
+             <Typography variant='body1'>80</Typography>
              </Grid>
              <StyledLinearProgress variant="determinate" value={20} />
              </Box>
@@ -620,7 +630,7 @@ function Dashboard() {
           </Paper>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6} md={6}>
           <Paper className={classes.paperBox}>
           <Grid item xs={12}>
                                 <Grid container alignContent="center" justifyContent="space-between" className={classes.headtext}>
@@ -637,7 +647,7 @@ function Dashboard() {
             <Card variant="outlined" className={classes.Boxnew}>
             <CardContent>
             <Typography className={classes.headingbox}>20</Typography>
-            <Typography variant="body2">Fresher</Typography>
+            <Typography variant="body1">Fresher</Typography>
             </CardContent>
             </Card>
            </Grid>
@@ -646,7 +656,7 @@ function Dashboard() {
             <Card variant="outlined" className={classes.Boxnew}>
             <CardContent>
             <Typography className={classes.headingbox}>35</Typography>
-            <Typography variant="body2">Internship</Typography>
+            <Typography variant="body1">Internship</Typography>
             </CardContent>
             </Card>
            </Grid>
@@ -655,7 +665,7 @@ function Dashboard() {
             <Card variant="outlined" className={classes.Boxnew}>
             <CardContent>
             <Typography className={classes.headingbox}>500</Typography>
-            <Typography variant="body2">Remote</Typography>
+            <Typography variant="body1">Remote</Typography>
             </CardContent>
             </Card>
            </Grid>
@@ -664,7 +674,7 @@ function Dashboard() {
             <Card variant="outlined" className={classes.Boxnew}>
             <CardContent>
             <Typography className={classes.headingbox}>10</Typography>
-            <Typography variant="body2">Part Time</Typography>
+            <Typography variant="body1">Part Time</Typography>
             </CardContent>
             </Card>
            </Grid>
@@ -673,7 +683,7 @@ function Dashboard() {
             <Card variant="outlined" className={classes.Boxnew}>
             <CardContent>
             <Typography className={classes.headingbox}>30</Typography>
-            <Typography variant="body2">Contractors</Typography>
+            <Typography variant="body1">Contractors</Typography>
             </CardContent>
             </Card>
            </Grid>
@@ -682,7 +692,7 @@ function Dashboard() {
             <Card variant="outlined" className={classes.Boxnew}>
             <CardContent>
             <Typography className={classes.headingbox}>10000+</Typography>
-            <Typography variant="body2">Permanent</Typography>
+            <Typography variant="body1">Permanent</Typography>
             </CardContent>
             </Card>
            </Grid>
