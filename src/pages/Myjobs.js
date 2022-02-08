@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import { ListItemText, List, ListItem, Popover, Grid, Card, Badge, Avatar, TablePagination, Button, Typography, Box, Divider } from '@material-ui/core';
+import { ListItemText, List, ListItem, Popover,  Grid, Card, Badge, Avatar, TablePagination, Button, Typography, Box, Divider } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import FilterListIcon from "@material-ui/icons/FilterList";
+import { useTheme } from "@material-ui/core/styles";
+import FilterList from "@material-ui/icons/FilterList";
 import DownloadIcon from '@mui/icons-material/Download';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CustomDropDown from "../component/CustomDropDown";
 import SearchComponent from "../component/SearchComponent";
+import FitlerDrawer from "../component/FitlerDrawer";
 
 
 function Myjobs() {
+  const theme = useTheme();
+  const [openDrawer, setopenDrawer] = useState(false);
+  const [openFitlerDrawer, setOpenFilterDrawer] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -29,7 +35,7 @@ function Myjobs() {
     setPage(0);
   };
 
-
+  const [filter, setfilter] = useState({});
   const [initialMount, setInitialMount] = useState(true);
   const [selectByStatus, setSelectByStatus] = useState("Expired");
   const [selectTriggerType, setSelectTriggerType] = useState("All");
@@ -48,29 +54,48 @@ function Myjobs() {
         </Grid>
       
 
-<Grid className="allcssmain">
-<Box className="w-100 flex-between-center mb-20">
-            <Typography variant="h2">My Jobs</Typography>
-            <div className="flex-center">
-            <Box className="mr-20">
+        <Box className="wh-100 flex-center-start">
+
+          <Box
+          className="calcendar-page h-100"
+          style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
+        >
+         
+          <Grid className="wh-100 flex-between-start flex-column">
+          <Grid
+              container
+              justify="space-between"
+              alignItems="center"
+              className="title-bar"
+            >
+              <Grid
+                xs={4}
+                sm={5}
+                md={4}
+                justify="flex-start"
+                alignItems="center"
+              >
+                 <Typography variant="h2">My Jobs</Typography>
+              </Grid>
+              <Grid xs={8} sm={7} md={8} className="flex-end-center">
+                <Box style={{ marginRight: 20 }}>
                <SearchComponent/>
               </Box>
-
-              <Box  className="icon-cover flex-center mr-20">
+               
+                <Box  className="icon-cover flex-center mr-20">
                   <DownloadIcon className="header-icon" />
                 </Box>
+               
 
-
-            <Box  className="icon-cover flex-center mr-20"
-                  // onClick={() => setopenDrawer(!openDrawer)}
+                <Box
+                  className="icon-cover flex-center mr-20"
+                  style={{ marginRight: 20 }}
+                  onClick={() => setOpenFilterDrawer(true)}
                 >
-                  <FilterListIcon className="header-icon" />
+                   <FilterListIcon className="header-icon" />
                 </Box>
-
-                
-             
-              <Box >
-              <Link to="/CreateJob">
+               
+                <Link to="/CreateJob">
                 <Button
                   variant="contained"
                   color="secondary"
@@ -81,10 +106,8 @@ function Myjobs() {
                   Create New
                 </Button>
                 </Link>
-              </Box>
-            </div>
-          </Box>
-      
+              </Grid>
+            </Grid>
           <Card className="cardbox">
          <Grid container>
           <Grid item xs={8}>
@@ -252,13 +275,15 @@ function Myjobs() {
 </Grid>
        </Grid>
       </Card>
+
+    
     
        {/* Card 2 */}
 
        <Card className="cardbox">
          <Grid container>
           <Grid item xs={8}>
-          <Typography variant="h6" style={{fontSize:"18px"}}>Front End Developer (React)</Typography>
+          <Typography variant="h6" style={{fontSize:"18px"}}> <Link to="/JobDetails">Front End Developer (React)</Link></Typography>
           <Typography variant="body1" className="mt-10" >Job Id : #12310074</Typography>
           </Grid>
            <Grid item xs={4} >
@@ -772,7 +797,26 @@ function Myjobs() {
       rowsPerPage={rowsPerPage}
       onRowsPerPageChange={handleChangeRowsPerPage}
     /> */}
-</Grid>
+  </Grid>
+  </Box>
+
+  {openFitlerDrawer ? (
+          <FitlerDrawer
+            width="260px"
+            // style={{ width: "250px !important" }}
+            openFilter={openFitlerDrawer}
+            closeFilter={(e) => {
+              e.preventDefault();
+              setOpenFilterDrawer(false);
+            }}
+            filterKey="jobs"
+            filter={filter}
+            updateFilterList={(val) => setfilter({ ...val })}
+            // filterList={formFieldValue}
+          />
+        ) : null}
+
+</Box>
        
         </main>
     )

@@ -14,6 +14,7 @@ import Requisition from './pages/Requisition';
 import Interview from './pages/Interview';
 import Settings from './pages/Settings';
 import CreateJob from "./pages/CreateJob";
+import JobDetails from "./pages/JobDetails";
 
 import { createTheme, ThemeProvider, alpha } from "@material-ui/core/styles";
 const secondaryColor = "rgba(51, 90, 255, 1)";
@@ -329,6 +330,8 @@ export default function App() {
         <Route path="/Interview" component={Interview} />
         <Route path="/Settings" component={Settings} />
         <Route path="/CreateJob" component={CreateJob} />
+        <Route path="/JobDetails" component={JobDetails} />
+       
         <Route path="/" exact component={Dashboard} />
       </Switch>
 </Router>

@@ -58,17 +58,7 @@ function CreateJob() {
     return (
         <>
 
-
-
-
-
-
-
-
-
-
-        
-        <Grid className="steppermain">
+ <Grid className="steppermain">
         <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {

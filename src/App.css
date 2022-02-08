@@ -517,6 +517,7 @@ box-sizing: border-box;
 border-radius: 6px !important;
 box-shadow: none !important;
 padding: 20px;
+width: 100%;
 margin-bottom: 30px;
 }
 .cardbox:hover{background:rgba(248, 248, 248, 0.4);}
@@ -581,3 +582,19 @@ font-size: 14px !important;
   .steppermain{
     padding: 30px 20%;
   }
+
+  .filter-style {
+    width: 19.4vw;
+    background-color: #fcfcfc;
+    height: 100%;
+}
+.drawer-container {
+  width: 19.4vw;
+  background-color: #fcfcfc;
+  height: 100%;
+  border-left: 1px solid #ebecf0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  visibility: inherit !important;
+  transform: none !important;
+}
