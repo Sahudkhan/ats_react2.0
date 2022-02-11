@@ -1,26 +1,19 @@
 import * as React from 'react';
 import { styled } from '@mui/system';
-import { TextField, Paper, Divider, Grid, CardContent, Card, MenuItem, LinearProgress, Typography, Box } from '@material-ui/core';
+import {Popover, List, Divider, Grid, ListItem, Card, MenuItem, ListItemText, Typography, Box,} from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
+import Jobcandidates from './Jobcandidates';
+import JobDetail from './Job_detail';
+import SourceJob from './Source_job';
+import HiringProccess from './HiringProccess';
 
-
-const blue = {
-    50: '#F0F7FF',
-    100: '#C2E0FF',
-    200: '#80BFFF',
-    300: '#66B2FF',
-    400: '#3399FF',
-    500: '#007FFF',
-    600: '#0072E5',
-    700: '#0059B2',
-    800: '#004C99',
-    900: '#003A75',
-  };
-  
 const Tab = styled(TabUnstyled)`
 font-family: 'Poppins';
   color: #000;
@@ -61,25 +54,30 @@ const TabsList = styled(TabsListUnstyled)`
   min-width: 320px;
   background-color:#fff;
   border-radius: 0px;
-  margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: space-between;
-  border-bottom:1px solid #eee;
+  
 `;
 function JobDetails() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   
     return (
         <>
          <Box className='w-100 flex-column'>
-       <TabsUnstyled defaultValue={0}>
-            <Grid className="w-100  flex-between-center css-7551ie">
-            <Grid container>
-          <Grid item md={2}>
-            <Typography variant="h2">My Jobs</Typography>
-            </Grid>
-            <Grid item md={8}>
+        <TabsUnstyled defaultValue={0}>
+       <Grid className="flex-between-center css-7551ie" style={{borderBottom:"1px solid #EBECF0"}}>
+       <Typography variant="h2"><ArrowBackIcon/> Job Detail</Typography>
+           
       <TabsList>
         <Tab>Candidates</Tab>
         <Tab>Timeline</Tab>
@@ -87,18 +85,134 @@ function JobDetails() {
         <Tab>Hiring Process</Tab>
         <Tab>Sourcing</Tab>
       </TabsList>
+     
+      <Grid className='flex-end-center'>
+      <Box>
+          <IconButton 
+           onClick={handleClick}
+         style={{padding:0}}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Popover
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
+       <List className="list-popover">
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               Edit
+               </ListItemText>
+        </ListItem>
+      
+       
+        </List>
+      </Popover>
+      </Box>
       </Grid>
-      <Grid item md={2}>sadasdsad</Grid>
       </Grid>
+
+     <Grid className="css-7551ie mt-30">
+      <Card className="cardbox">
+       
+       <Grid container>
+      
+       <Grid item xs={3}>
+         <Typography variant="h6" style={{fontSize:"18px"}}> Front End Developer (React)</Typography>
+         <Typography variant="body1" className="mt-10" >Job Id : #12310074</Typography>
+         </Grid>
+       <Grid item xs={6}>
+        
+     <Box 
+        sx={{ display: 'flex', justifyContent: 'space-between' }}
+     >
+          <Box>
+          <Typography variant="h6" className="numberjobs">200</Typography>
+          <Typography variant="body1" >All Active </Typography>
+         
+          </Box>
+
+          <Box>
+          <Typography variant="h6" className="numberjobs">80</Typography>     
+         <Typography variant="body1" >New </Typography>
+         </Box>
+
+          <Box>
+          <Typography variant="h6" className="numberjobs">100</Typography>
+          <Typography variant="body1" >In Progress </Typography>
+      
+          </Box>
+
+          <Box>
+          <Typography variant="h6" className="numberjobs">29</Typography>
+          <Typography variant="body1" >On Hold </Typography>
+         
+          </Box>
+
+          <Box>
+          <Typography variant="h6" className="numberjobs">44</Typography>
+          <Typography variant="body1" >Selected </Typography>
+       
+          </Box>
+
+          <Box>
+          <Typography variant="h6" className="numberjobs">555</Typography>
+          <Typography variant="body1" >Hired </Typography>
+         
+          </Box>
+
+
+       </Box>
+         </Grid>
+
+      <Grid item xs={3} >
+         <Box sx={{ display: 'flex', justifyContent: 'space-around' }} >
+         
+         <Box>
+         <Typography variant="body1" color="subtitle1"  className="numberjobs2">Feb 24, 2021</Typography>
+         <Typography variant="body1" >Published On</Typography>
+         </Box>
+
+       <Box>
+       <Typography variant="body1" color="subtitle1"  className="numberjobs2">Feb 24, 2021</Typography>
+       <Typography variant="body1">Expiring On</Typography>
+      </Box>
+
+       </Box>
+
+</Grid>
       </Grid>
-      <TabPanel value={0}>First content</TabPanel>
-      <TabPanel value={1}>Second content</TabPanel>
-      <TabPanel value={2}>Third content</TabPanel>
-      <TabPanel value={3}>Third content</TabPanel>
-      <TabPanel value={4}>Third content</TabPanel>
+     </Card>
+     </Grid>
+      <TabPanel value={0}>
+     
+      <Jobcandidates/>
+   
+      </TabPanel>
+      <TabPanel value={1}>sdsf</TabPanel>
+      <TabPanel value={2}><JobDetail/></TabPanel>
+      <TabPanel value={3}>
+        <HiringProccess/>
+      </TabPanel>
+      <TabPanel value={4}><SourceJob/></TabPanel>
+      
+    
     </TabsUnstyled>
            
-        
+   
         </Box>
            
         </>

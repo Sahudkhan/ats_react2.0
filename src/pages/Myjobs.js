@@ -283,7 +283,7 @@ function Myjobs() {
        <Card className="cardbox">
          <Grid container>
           <Grid item xs={8}>
-          <Typography variant="h6" style={{fontSize:"18px"}}> <Link to="/JobDetails">Front End Developer (React)</Link></Typography>
+          <Typography variant="h6" style={{fontSize:"18px"}}> <Link to="/JobDetails"  underline="none">Front End Developer (React)</Link></Typography>
           <Typography variant="body1" className="mt-10" >Job Id : #12310074</Typography>
           </Grid>
            <Grid item xs={4} >
