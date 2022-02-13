@@ -662,3 +662,15 @@ font-size: 14px !important;
   font-family: Roboto;
   display: block;
 }
+
+.custom-button2:hover{
+  background-color: transparent !important;
+}
+
+.boxpapper{background: #FFFFFF;
+  border: 1px solid #EBECF0;
+  box-sizing: border-box;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  border-radius: 4px;}

@@ -76,7 +76,7 @@ function JobDetails() {
          <Box className='w-100 flex-column'>
         <TabsUnstyled defaultValue={0}>
        <Grid className="flex-between-center css-7551ie" style={{borderBottom:"1px solid #EBECF0"}}>
-       <Typography variant="h2"><ArrowBackIcon/> Job Detail</Typography>
+       <Typography variant="h2"><ArrowBackIcon/> Jobs</Typography>
            
       <TabsList>
         <Tab>Candidates</Tab>
