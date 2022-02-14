@@ -27,7 +27,7 @@ className="css-7551ie h-100"
                 justify="flex-start"
                 alignItems="center"
               >
-                <Typography variant="subtitle1" style={{marginBottom:15}}>
+                <Typography variant="subtitle1" style={{marginBottom:25}}>
                 Job Details
               </Typography>
               

@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import { Typography, Box, Card, ListItemText, ListItem, Grid, Button, ListItemAvatar, CardContent, Divider} from '@material-ui/core';
+import React from "react";
+import { Typography, Box, ListItemText, ListItem, Grid, Button, ListItemAvatar, Divider} from '@material-ui/core';
 import Rating from '@mui/material/Rating'
 import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
-import IconButton from '@mui/material/IconButton';
 import Scrollbars from "react-custom-scrollbars";
 
 
 function SourceJob() {
-    const [value, setValue] = React.useState(2);
+
     return (
         <>  
 
@@ -29,7 +26,7 @@ className="css-7551ie h-100"
                 justify="flex-start"
                 alignItems="center"
               >
-                <Typography variant="subtitle1" style={{marginBottom:15}}>
+                <Typography variant="subtitle1" style={{marginBottom:25}}>
                Source
               </Typography>
               
@@ -106,7 +103,7 @@ className="css-7551ie h-100"
  </ListItemAvatar>
  <ListItemText>
  <Typography variant="h6" style={{fontSize:"16px", marginBottom:8}}> Sahud Khan</Typography>
-  <Typography variant="body1"  > <Rating value={value} readOnly  name="size-small" size="small" /></Typography>
+  <Typography variant="body1"  > <Rating value={2} readOnly  name="size-small" size="small" /></Typography>
   </ListItemText>
 </ListItem>
        
@@ -135,7 +132,7 @@ className="css-7551ie h-100"
  </ListItemAvatar>
  <ListItemText>
  <Typography variant="h6" style={{fontSize:"16px", marginBottom:8}}> Sahud Khan</Typography>
-  <Typography variant="body1"  > <Rating value={value} readOnly  name="size-small" size="small" /></Typography>
+  <Typography variant="body1"  > <Rating value={3} readOnly  name="size-small" size="small" /></Typography>
   </ListItemText>
 </ListItem>
        

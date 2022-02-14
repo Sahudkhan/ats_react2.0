@@ -57,16 +57,16 @@ function Myjobs() {
         <Box className="wh-100 flex-center-start">
 
           <Box
-          className="calcendar-page h-100"
+          className="allcssmain"
           style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
         >
          
-          <Grid className="wh-100 flex-between-start flex-column">
+          <Grid className="flex-between-start flex-column">
           <Grid
               container
               justify="space-between"
               alignItems="center"
-              className="title-bar"
+              className="title-bar mb-20"
             >
               <Grid
                 xs={4}
