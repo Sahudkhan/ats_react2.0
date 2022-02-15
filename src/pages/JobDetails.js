@@ -10,6 +10,7 @@ import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
 import Jobcandidates from './Jobcandidates';
+import TimelineJob from './TimelineJob';
 import JobDetail from './Job_detail';
 import SourceJob from './Source_job';
 import HiringProccess from './HiringProccess';
@@ -202,7 +203,9 @@ function JobDetails() {
       <Jobcandidates/>
    
       </TabPanel>
-      <TabPanel value={1}>sdsf</TabPanel>
+      <TabPanel value={1}>
+        <TimelineJob/>
+      </TabPanel>
       <TabPanel value={2}><JobDetail/></TabPanel>
       <TabPanel value={3}>
         <HiringProccess/>

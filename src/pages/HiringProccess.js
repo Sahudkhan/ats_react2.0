@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import { Typography, Box, ListItem, ListItemText, Checkbox, List, ListItemAvatar, Grid, Button, Popover} from '@material-ui/core';
+import { Typography, Box, ListItem, ListItemText, Popper, Paper, Checkbox, List, Fade, ListItemAvatar, Grid, Button, Popover} from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
+import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import CloseIcon from '@mui/icons-material/Close';
 import Scrollbars from "react-custom-scrollbars";
 import DropDownHiring from "../component/DropDownHiring";
 
@@ -69,7 +70,7 @@ className="css-7551ie h-100"
                 alignItems="center"
               >
                 <Typography variant="h6"  style={{fontSize:"16px", }}>
-          Hiring Team
+          Workflow
         </Typography>
               </Grid>
               <Grid xs={8} sm={7} md={8} className="flex-end-center dropdmenu">
@@ -87,7 +88,7 @@ className="css-7551ie h-100"
             </Grid>
 
 
-                <Scrollbars style={{height:'60vh', paddingRight:10}}>
+                <Scrollbars style={{height:'50vh', paddingRight:10}}>
          
                 <Box className="boxpapper">
                   <Box>
@@ -260,8 +261,119 @@ className="css-7551ie h-100"
              
                 </Scrollbars>
                
+                <PopupState variant="popper" popupId="demo-popup-popper">
+      {(popupState) => (
+        <div>
+          <Button variant="contained" {...bindToggle(popupState)}>
+          + Add Workflow Steps
+          </Button>
+          <Popper {...bindPopper(popupState)} transition>
+            {({ TransitionProps }) => (
+              <Fade {...TransitionProps} timeout={350}>
+                <Paper>
+                  <Grid className="flex-between-center">
+                  <Typography variant="h6" style={{fontSize:"16px", marginBottom:0}}> Hiring Team Screen</Typography>
+                  <CloseIcon/>
+                  </Grid>
+                <Scrollbars style={{height:'50vh', width:300}}>
+                <Box className="flex-between-center ">
+                 <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+                 <Typography variant="body1"> Hiring Team</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                  <Box><Checkbox {...label} /></Box>
+                </Box>
+
+                <Box className="flex-between-center ">
+                 <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+                 <Typography variant="body1"> Recruiter Screen</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                  <Box><Checkbox {...label} /></Box>
+                </Box>
+
+                <Box className="flex-between-center ">
+                 <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+                 <Typography variant="body1"> Final Interview</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                  <Box><Checkbox {...label} /></Box>
+                </Box>
+
+                <Box className="flex-between-center ">
+                 <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+                 <Typography variant="body1"> Video Interview</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                  <Box><Checkbox {...label} /></Box>
+                </Box>
+
+                <Box className="flex-between-center ">
+                 <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+                 <Typography variant="body1"> On Site Interview</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                  <Box><Checkbox {...label} /></Box>
+                </Box>
+
+                <Box className="flex-between-center ">
+                 <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+                 <Typography variant="body1"> Test Assignment</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                  <Box><Checkbox {...label} /></Box>
+                </Box>
+
+                <Box className="flex-between-center ">
+                 <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+                 <Typography variant="body1"> BVG Aadhar</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                  <Box><Checkbox {...label} /></Box>
+                </Box>
+
+</Scrollbars>
+
+<Link
+  component="button"
+  variant="body2"
+  onClick={() => {
+    console.info("I'm a button.");
+  }}
+>
+  Button Link
+</Link>
+                </Paper>
+              </Fade>
+            )}
+          </Popper>
+        </div>
+      )}
+    </PopupState>
                 </Grid>
                
+              
               </Grid>
               
 
@@ -301,7 +413,8 @@ className="css-7551ie h-100"
             </Grid>
 
             <Grid container spacing={2}>
-<Grid item xs={4} className="boxpapperteam">
+       <Grid item xs={4} >
+         <Grid className="boxpapperteam">
   <Box>
             <ListItem alignItems="flex-start" style={{padding:0}}>
         <ListItemAvatar className="m-0">
@@ -350,8 +463,222 @@ className="css-7551ie h-100"
         </List>
       </Popover>
       </Box>
-
       </Grid>
+      </Grid>
+
+      <Grid item xs={4} >
+         <Grid className="boxpapperteam">
+  <Box>
+            <ListItem alignItems="flex-start" style={{padding:0}}>
+        <ListItemAvatar className="m-0">
+        <Avatar alt="Travis Howard" src="/img/bitmap.png" />
+        </ListItemAvatar>
+        <ListItemText>
+        <Typography variant="h6" style={{fontSize:"16px", marginBottom:5,}}> Sahud Khan</Typography>
+         <Typography variant="body1">Interviewer</Typography>
+        
+         </ListItemText>
+      </ListItem>   
+      </Box>
+
+      <Box>
+          <IconButton 
+           onClick={handleClick}
+         style={{padding:0, marginTop:9}}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Popover
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
+       <List className="list-popover">
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               Delete
+               </ListItemText>
+        </ListItem>
+      
+       
+        </List>
+      </Popover>
+      </Box>
+      </Grid>
+      </Grid>
+
+      <Grid item xs={4} >
+         <Grid className="boxpapperteam">
+  <Box>
+            <ListItem alignItems="flex-start" style={{padding:0}}>
+        <ListItemAvatar className="m-0">
+        <Avatar alt="Travis Howard" src="/img/bitmap.png" />
+        </ListItemAvatar>
+        <ListItemText>
+        <Typography variant="h6" style={{fontSize:"16px", marginBottom:5,}}> Sahud Khan</Typography>
+         <Typography variant="body1">Interviewer</Typography>
+        
+         </ListItemText>
+      </ListItem>   
+      </Box>
+
+      <Box>
+          <IconButton 
+           onClick={handleClick}
+         style={{padding:0, marginTop:9}}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Popover
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
+       <List className="list-popover">
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               Delete
+               </ListItemText>
+        </ListItem>
+      
+       
+        </List>
+      </Popover>
+      </Box>
+      </Grid>
+      </Grid>
+
+      <Grid item xs={4} >
+         <Grid className="boxpapperteam">
+  <Box>
+            <ListItem alignItems="flex-start" style={{padding:0}}>
+        <ListItemAvatar className="m-0">
+        <Avatar alt="Travis Howard" src="/img/bitmap.png" />
+        </ListItemAvatar>
+        <ListItemText>
+        <Typography variant="h6" style={{fontSize:"16px", marginBottom:5,}}> Sahud Khan</Typography>
+         <Typography variant="body1">Interviewer</Typography>
+        
+         </ListItemText>
+      </ListItem>   
+      </Box>
+
+      <Box>
+          <IconButton 
+           onClick={handleClick}
+         style={{padding:0, marginTop:9}}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Popover
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
+       <List className="list-popover">
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               Delete
+               </ListItemText>
+        </ListItem>
+      
+       
+        </List>
+      </Popover>
+      </Box>
+      </Grid>
+      </Grid>
+
+      <Grid item xs={4} >
+         <Grid className="boxpapperteam">
+  <Box>
+            <ListItem alignItems="flex-start" style={{padding:0}}>
+        <ListItemAvatar className="m-0">
+        <Avatar alt="Travis Howard" src="/img/bitmap.png" />
+        </ListItemAvatar>
+        <ListItemText>
+        <Typography variant="h6" style={{fontSize:"16px", marginBottom:5,}}> Sahud Khan</Typography>
+         <Typography variant="body1">Interviewer</Typography>
+        
+         </ListItemText>
+      </ListItem>   
+      </Box>
+
+      <Box>
+          <IconButton 
+           onClick={handleClick}
+         style={{padding:0, marginTop:9}}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Popover
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
+       <List className="list-popover">
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               Delete
+               </ListItemText>
+        </ListItem>
+      
+       
+        </List>
+      </Popover>
+      </Box>
+      </Grid>
+      </Grid>
+
+
       </Grid>
               </Grid>
             </Grid>
