@@ -17,7 +17,7 @@ display: flex;
 align-items: center;
 text-decoration: none;
 margin: 0 1rem;
-height: 100%;
+height: 60px;
 cursor: pointer;
 position: relative;
   flex-shrink: 0;

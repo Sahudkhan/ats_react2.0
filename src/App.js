@@ -12,7 +12,8 @@ import Workflow from './pages/Workflow';
 import Analytics from './pages/Analytics';
 import Requisition from './pages/Requisition';
 import Interview from './pages/Interview';
-import Settings from './pages/Settings';
+import JobWidget from './pages/Settings/CareerSetup/index';
+import ReviewCard from './pages/Settings/Configuration/index';
 import CreateJob from "./pages/CreateJob";
 import JobDetails from "./pages/JobDetails";
 
@@ -299,7 +300,7 @@ const Custumtheme = createTheme({
       letterSpacing: 0,
     },
     button: {
-      fontFamily: "'Roboto', sans-serif",
+      fontFamily: "'Poppins', sans-serif",
       fontWeight: 500,
       fontSize: "0.875rem",
       lineHeight: 1.125,
@@ -328,7 +329,8 @@ export default function App() {
         <Route path="/Analytics" component={Analytics} />
         <Route path="/Requisition" component={Requisition} /> 
         <Route path="/Interview" component={Interview} />
-        <Route path="/Settings" component={Settings} />
+        <Route path="/JobWidget" component={JobWidget} />
+        <Route path="/ReviewCard" component={ReviewCard} />
         <Route path="/CreateJob" component={CreateJob} />
         <Route path="/JobDetails" component={JobDetails} />
        

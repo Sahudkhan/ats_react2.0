@@ -13,7 +13,6 @@ const useStyles = makeStyles({
   table: {
 fontSize:12,
     margin: "auto",
-    borderSpacing:"2px 20px",
     borderCollapse:'inherit'
 
    
@@ -51,7 +50,7 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
               container
               justify="space-between"
               alignItems="center"
-              className="title-bar"
+              className="title-bar mb-20"
             >
               <Grid
                 xs={12}

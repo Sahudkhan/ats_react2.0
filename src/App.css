@@ -693,4 +693,28 @@ padding: 0px 10px !important;
       padding: 10px;
       justify-content: space-between;
       border-radius: 4px;}
-  
+
+  .leftTabnew .MuiTab-wrapper{
+    align-items: flex-start;
+  }
+  .leftTabnew .MuiTab-textColorInherit.Mui-selected {
+    opacity: 1;
+    background: rgba(51,90,255,.0506993);
+    color: #335AFF;
+    border-radius: 4px;
+    border: none;
+}
+.leftTabnew .MuiTab-textColorInherit {
+  color:#172B4D;
+  opacity: inherit;
+}
+.leftTabnew .PrivateTabIndicator-vertical-7{
+  display: none;
+}
+
+.css-1yqw6cw {
+  padding: 20px 64px 20px 28px;
+  width: calc(100vw - 250px);
+  /* border-left: 1px solid #ebecf0; */
+  overflow-y: auto;
+}

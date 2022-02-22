@@ -70,7 +70,7 @@ const Header = () => {
           <NavLink exact activeStyle to="/Analytics">Analytics</NavLink>
           <NavLink exact activeStyle to="/Requisition">Requisition</NavLink>
           <NavLink exact activeStyle to="/Interview">Interview</NavLink>
-          <NavLink exact activeStyle to="/Settings">Settings</NavLink>
+          <NavLink exact activeStyle to="/JobWidget">Settings</NavLink>
           </NavMenu>
        
        </Nav>

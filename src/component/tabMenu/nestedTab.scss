@@ -1,0 +1,60 @@
+$font-Poppins: "Poppins", sans-serif;
+
+.wh-100-auto {
+  width: 100%;
+  height: auto;
+}
+
+.start-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex-center {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.border-bottom-tab {
+  border-bottom: 1px solid #ebecf0;
+}
+
+.cal-page-container {
+  width: 100%;
+  height: 91vh;
+
+  .cal-page-content {
+    margin-right: 2.454vh !important;
+
+    .create-custom-calender-container {
+      height: 65%;
+      width: 100%;
+    }
+
+    .emp-timeline {
+      width: 100%;
+      height: 35%;
+      border-top: 0.0625rem solid #ebecf0;
+    }
+  }
+
+  .second-container {
+    margin-right: 2.454vh !important;
+  }
+}
+
+.h-100 {
+  height: 100% !important;
+}
