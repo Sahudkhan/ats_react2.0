@@ -13,6 +13,7 @@ import {
 
 const component = [
   lazy(() => import("./JobWidget")),
+  lazy(() => import("./JobsPrefix")),
 
 ];
 

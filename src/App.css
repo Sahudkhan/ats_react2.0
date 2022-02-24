@@ -713,8 +713,57 @@ padding: 0px 10px !important;
 }
 
 .css-1yqw6cw {
-  padding: 20px 64px 20px 28px;
-  width: calc(100vw - 250px);
+  padding: 20px 64px 0px 64px;
+  /* width:calc(100% - 64px); */
   /* border-left: 1px solid #ebecf0; */
   overflow-y: auto;
 }
+
+.colorpickers{
+  height: 50px;
+border: 1px solid #BDBDBD;
+box-sizing: border-box;
+border-radius: 6px;
+position: relative;
+}
+.pickemain{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+height: 24px;
+background: #335AFF;
+border-radius: 3px;
+width: 24px;
+}
+.twitter-picker {
+  position: absolute !important;
+  right: 0 !important;
+  top: 44px !important;
+  width: 205px !important;
+}
+.widgettheme{
+  background: #FFFFFF;
+border: 1px solid #EBECF0;
+box-sizing: border-box;
+border-radius: 6px;
+width: 100%;
+margin-top: 30px;
+padding: 20px;
+}
+.preve{width: 90px !important;
+  height: 35px  !important;
+  font-family: Roboto !important;
+font-style: normal;
+margin-top: 20px !important;
+font-weight: 500;
+font-size: 14px  !important;
+line-height: 16px;
+box-shadow: none !important;
+color: #335AFF !important;
+  background: rgba(51, 90, 255, 0.05) !important;
+  border-radius: 3px;}
+
+.ratingscale{background: #F8F8F8;
+  padding: 15px;
+  border-radius: 8px;}

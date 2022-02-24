@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from "react";
-import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Typography, Box, ListItem, TableRow, ListItemText, Popover, List, ListItemAvatar, TableHead, TableContainer, TablePagination, Table,  Paper, TableCell, TableBody, Grid, Button} from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import ListIcon from '@mui/icons-material/List';
-import FilterListIcon from "@material-ui/icons/FilterList";
+import React, { useState } from "react";
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography, Box, ListItem, TableRow, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
 import FitlerDrawer from "../component/FitlerDrawer";
 import Scrollbars from "react-custom-scrollbars";
@@ -23,19 +19,10 @@ fontSize:12,
 function TimelineJob() {
   const classes = useStyles();
   const [filter, setfilter] = useState({});
-  const [openDrawer, setopenDrawer] = useState(false);
   const [openFitlerDrawer, setOpenFilterDrawer] = useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
-  const [initialMount, setInitialMount] = useState(true);
-  const [selectByStatus, setSelectByStatus] = useState("Select Next Steps");
+ 
+
 
 
     return (
@@ -43,8 +30,8 @@ function TimelineJob() {
         <Box className="wh-100 flex-center-start">
 
 <Box
-className="css-7551ie h-100"
-style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
+className="css-7551ie h-100 w-100"
+
 >
          <Grid
               container
