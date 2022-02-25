@@ -28,7 +28,7 @@ const Settings = (props) => {
       
       <NavLink exact activeStyle to="/JobWidget">Career Page Setup</NavLink>
       <NavLink exact activeStyle to="/ReviewCard">Configuration</NavLink>
-      <NavLink exact activeStyle to="/Candidates">Permissions</NavLink>
+      <NavLink exact activeStyle to="/UserManagement">Permissions</NavLink>
       <NavLink exact activeStyle to="/Authentication">Integrations</NavLink>
       </NavMenu>
      

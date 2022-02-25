@@ -12,16 +12,13 @@ import {
 } from '../../../component/NavbarElements';
 
 const component = [
-  lazy(() => import("./ReviewCard")),
-  lazy(() => import("./HiringProccess")),
-  lazy(() => import("./UniqueIdentifier")),
-  lazy(() => import("./JobReApply")),
-  lazy(() => import("./JobLibrary")),
-  lazy(() => import("./EmailConfiguration")),
+  lazy(() => import("./UserManagement")),
+  lazy(() => import("./RoleManagement")),
+  lazy(() => import("./ViewManagement")),
 
 ];
 
-const Configuration = (props) => {
+const Integrations = (props) => {
   const [selected, setSelected] = useState(0);
   return (
     <>
@@ -57,12 +54,9 @@ const Configuration = (props) => {
           onChange={(e, newValue) => setSelected(newValue)}
           
         >
-          <Tab label="Review Card" />
-          <Tab label="Hiring Process" />
-          <Tab label="Unique Identifier" />
-          <Tab label="Job Re-Apply Days" />
-          <Tab label="Job Descrip Library" />
-          <Tab label="Email Configuration" />
+          <Tab label="User Management" />
+          <Tab label="Role Management" />
+          <Tab label="View Management" />
         </Tabs>
       </Grid>
       <Grid
@@ -86,4 +80,4 @@ const Configuration = (props) => {
   );
 };
 
-export default Configuration;
+export default Integrations;

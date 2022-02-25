@@ -15,6 +15,7 @@ import Interview from './pages/Interview';
 import JobWidget from './pages/Settings/CareerSetup/index';
 import ReviewCard from './pages/Settings/Configuration/index';
 import Authentication from './pages/Settings/Integrations/index'
+import UserManagement from './pages/Settings/Permissions/index'
 import CreateJob from "./pages/CreateJob";
 import JobDetails from "./pages/JobDetails";
 
@@ -333,6 +334,7 @@ export default function App() {
         <Route path="/JobWidget" component={JobWidget} />
         <Route path="/ReviewCard" component={ReviewCard} />
         <Route path="/Authentication" component={Authentication} />
+        <Route path="/UserManagement" component={UserManagement}/>
         <Route path="/CreateJob" component={CreateJob} />
         <Route path="/JobDetails" component={JobDetails} />
        
