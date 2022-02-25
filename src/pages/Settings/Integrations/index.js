@@ -12,12 +12,12 @@ import {
 } from '../../../component/NavbarElements';
 
 const component = [
-  lazy(() => import("./JobWidget")),
-  lazy(() => import("./JobsPrefix")),
+  lazy(() => import("./Authentication")),
+  lazy(() => import("./JobBoards")),
 
 ];
 
-const Settings = (props) => {
+const Integrations = (props) => {
   const [selected, setSelected] = useState(0);
   return (
     <>
@@ -53,9 +53,8 @@ const Settings = (props) => {
           onChange={(e, newValue) => setSelected(newValue)}
           
         >
-          <Tab label="Job Widget" />
-          <Tab label="Jobs Prefix Configure" />
-          <Tab label="Jobs Priority" />
+          <Tab label="Authentication" />
+          <Tab label="Job Boards" />
         </Tabs>
       </Grid>
       <Grid
@@ -79,4 +78,4 @@ const Settings = (props) => {
   );
 };
 
-export default Settings;
+export default Integrations;

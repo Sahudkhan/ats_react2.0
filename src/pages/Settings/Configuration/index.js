@@ -13,6 +13,11 @@ import {
 
 const component = [
   lazy(() => import("./ReviewCard")),
+  lazy(() => import("./HiringProccess")),
+  lazy(() => import("./UniqueIdentifier")),
+  lazy(() => import("./JobReApply")),
+  lazy(() => import("./JobLibrary")),
+  lazy(() => import("./EmailConfiguration")),
 
 ];
 
@@ -28,7 +33,7 @@ const Configuration = (props) => {
       <NavLink exact activeStyle to="/JobWidget">Career Page Setup</NavLink>
       <NavLink exact activeStyle to="/ReviewCard">Configuration</NavLink>
       <NavLink exact activeStyle to="/Candidates">Permissions</NavLink>
-      <NavLink exact activeStyle to="/Workflow">Job Boards</NavLink>
+      <NavLink exact activeStyle to="/Authentication">Integrations</NavLink>
       </NavMenu>
      
       </Grid>

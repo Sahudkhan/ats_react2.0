@@ -64,6 +64,10 @@ body {
   border: 0.0625rem solid #bbddbb !important;
 }
 
+.mt-5{margin-top: 5px !important;}
+
+.mt-15{margin-top: 15px !important;}
+
 .mt-10 {
   margin-top: 1.226vh !important;
 }
@@ -136,6 +140,7 @@ body {
   margin-top: 1.84vh !important;
   margin-bottom: 1.84vh !important;
 }
+.p-5{padding: 10px !important;}
 
 .p-10 {
   padding: 10vh 10vw !important;
@@ -639,8 +644,16 @@ font-size: 14px !important;
   background:#f0f0f0; 
   margin-right:15px; 
   padding:5px;
-  border: none I !important;
+  border: none !important;
 }
+.jobicon{width: 44px !important;
+  height: 44px !important;
+  border: 1px solid #EBECF0;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  border-radius: 4px !important;}
+
 .deactivebtn{
   color: #DD4F24 !important;
   display: block !important;
@@ -717,6 +730,7 @@ padding: 0px 10px !important;
   /* width:calc(100% - 64px); */
   /* border-left: 1px solid #ebecf0; */
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .colorpickers{
@@ -767,3 +781,52 @@ color: #335AFF !important;
 .ratingscale{background: #F8F8F8;
   padding: 15px;
   border-radius: 8px;}
+
+  .css-d9c359-MuiButtonBase-root-MuiToggleButton-root{
+    padding: 5px 10px !important;
+    text-transform: capitalize !important;
+  }
+
+ .workflowmanage {background: #FFFFFF;
+    border: 1px solid #EBECF0;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 4px;}
+
+  
+    .workbox{background: #FFFFFF;
+      border: 1px solid #EBECF0;
+      box-sizing: border-box;
+      display: flex;
+      padding:15px 20px;
+      justify-content: space-between;
+      margin:0px 0px 15px 0px;
+      border-radius: 4px;}
+
+      .authbox{background: #FFFFFF;
+        border: 1px solid #EBECF0;
+        box-sizing: border-box;
+        display: flex;
+        padding:10px 20px;
+        justify-content: space-between;
+        margin:0px 0px 20px 0px;
+        border-radius: 4px;}
+
+      .uniquebox{
+        background: #FFFFFF;
+border: 1px solid #EBECF0;
+box-sizing: border-box;
+border-radius: 6px;
+overflow: hidden;
+padding: 15px;
+      }
+    
+.paid{display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #757575;
+  text-transform: capitalize;
+  margin-top: 3px;}

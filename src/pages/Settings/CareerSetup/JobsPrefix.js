@@ -3,7 +3,8 @@ import {
 Grid, 
 Typography, 
 Select, 
-FormControl, 
+FormControl,
+Button, 
 MenuItem, 
 InputLabel, 
 Box,
@@ -13,18 +14,41 @@ TableHead,
 TableRow,
 Table,
 Paper,
-TableBody
-
-
+TableBody,
+Avatar,
+ListItem,
+ListItemAvatar,
+ListItemText,
+Popover, 
+List,
+Checkbox
  } from "@material-ui/core";
 import FormBuilder, { MyTable } from "../../../component/formBuilder";
-
-
+import IconButton from '@material-ui/core/IconButton';
+import Scrollbars from "react-custom-scrollbars";
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles({
+  table: {
+  fontSize:12,
+    margin: "auto",
+    borderCollapse:'inherit'
+  }
+ });
 
 function JobsPrefix() {
+  const classes = useStyles();    
   const [age, setAge] = React.useState('');
   const handleChange = (event) => {
     setAge(event.target.value);
+  };
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
     return (
@@ -60,30 +84,83 @@ function JobsPrefix() {
       </FormControl>
     </Box>
 
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="caption table">
-        <TableHead>
-          <TableRow component="th" scope="row">
-            <TableCell>Entity</TableCell>
-            <TableCell>Prefix</TableCell>
-            <TableCell>Starting From</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-          
-          </TableRow>
-        </TableHead>
-        <TableBody>
+    <Box sx={{ width: '100%', overflow: 'hidden' }}>
+         <Scrollbars style={{ height: "60vh" }}>
+      <TableContainer className="table-container-default table-container">
+        <Table aria-label="table" size="small" className={classes.table}>
+          <TableHead>
+            <TableRow>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">Entity </TableCell>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">Prefix</TableCell>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">Starting From</TableCell>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">&nbsp;</TableCell>
          
-            <TableRow >
-              <TableCell>ZDPG</TableCell>
-              <TableCell>ZDPG</TableCell>
-              <TableCell>sdasd</TableCell>
-              <TableCell align="right">ssa</TableCell>
-
             </TableRow>
-         
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+           
+         <TableRow className="bordernewcollumn">
+         <TableCell className="tablebody-14-roboto border-bottom-tab">Behavioural skills</TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab">ZDPG</TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab">Behavioural skills</TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab" style={{textAlign:"right"}}>
+        <Box>
+         <IconButton 
+          onClick={handleClick}
+        style={{padding:0}}
+         >
+           <MoreVertIcon />
+         </IconButton>
+         <Popover
+       anchorEl={anchorEl}
+       id="account-menu"
+       open={open}
+       onClose={handleClose}
+       onClick={handleClose}
+       
+       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+     >
+      <List className="list-popover">
+       <ListItem className="list-item flex-start-center">
+         <ListItemText
+               primaryTypographyProps={{
+                 style: {
+                   fontWeight: 500,
+                   color: "inherit",
+                 },
+               }}
+              >
+              Edit
+              </ListItemText>
+       </ListItem>
+
+       <ListItem className="list-item flex-start-center">
+         <ListItemText
+               primaryTypographyProps={{
+                 style: {
+                   fontWeight: 500,
+                   color: "inherit",
+                 },
+               }}
+              >
+              Delete
+              </ListItemText>
+       </ListItem>
+     
+      
+       </List>
+     </Popover>
+     </Box>
+        </TableCell>
+
+       </TableRow>
+
+          </TableBody>
+        </Table>
+      </TableContainer>
+     </Scrollbars>
+    </Box>
 
       </Grid>
     </Grid>
