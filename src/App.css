@@ -631,6 +631,7 @@ font-size: 14px !important;
 }
 
 .bordernewcollumn{box-shadow: 0px 0px 2px #d3d3d3;
+  position: relative;
   border-radius: 6px;}
 
 .borderRIghtnew{
@@ -830,3 +831,17 @@ padding: 15px;
   color: #757575;
   text-transform: capitalize;
   margin-top: 3px;}
+
+  .righdrop {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    padding: 0;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+.textright{
+  text-align: right !important;
+}
