@@ -12,6 +12,9 @@ import FilterListIcon from "@material-ui/icons/FilterList";
 import SearchComponent from "../component/SearchComponent";
 import Scrollbars from "react-custom-scrollbars";
 import UiLoader from "../component/app/loader";
+import FormBuilder, { MyTable } from "../component/formBuilder";
+// import CustomModal from "../component/customModal"
+import CustomModalfullwidth from "../component/customModalfullwidth";
 
 const useStyles = makeStyles({
     table: {
@@ -27,6 +30,8 @@ const useStyles = makeStyles({
 function MyInterview() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [openAdd, setOpenAdd] = useState(false);
+const [values, setValues] = useState({});
     const [alignment, setAlignment] = React.useState('web');
     const handleChange = (
         event: React.MouseEvent<HTMLElement>,
@@ -41,6 +46,9 @@ function MyInterview() {
       const handleClose = () => {
         setAnchorEl(null);
       };
+      const submitForm = (e) => {
+        setOpenAdd(false)
+       }
     return (
        <>
         <main>
@@ -298,8 +306,9 @@ function MyInterview() {
  anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 >
 <List className="list-popover">
- <ListItem className="list-item flex-start-center">
+ <ListItem className="list-item flex-start-center"    onClick={() => setOpenAdd(true)}>
    <ListItemText
+     
          primaryTypographyProps={{
            style: {
              fontWeight: 500,
@@ -358,6 +367,32 @@ function MyInterview() {
 
 </Grid>
        
+
+
+
+        <CustomModalfullwidth
+          open={openAdd}
+          cancelClicked={
+            () => {
+              setOpenAdd(false)
+            }
+          }
+          confirmClicked={
+            submitForm
+          }
+          // width="700px"
+          confirmText="Submit"
+          name= "Schedule Interview">
+          <div className="">
+          <FormBuilder size="sm" fields={[
+           { type: 'input', name: 'RULE_NAME', label: 'Attribute Name', required: false },
+           { type: 'input', name: 'RULE_NAME', label: 'Applicable To', required: false },
+         
+            ]} values={values} inputHandler={handleChange} />
+            
+            </div>
+        </CustomModalfullwidth>
+
         </main>
        </>
     )
