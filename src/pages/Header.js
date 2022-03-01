@@ -69,7 +69,7 @@ const Header = () => {
           <NavLink exact activeStyle to="/Workflow">Workflow</NavLink>
           <NavLink exact activeStyle to="/Analytics">Analytics</NavLink>
           <NavLink exact activeStyle to="/Requisition">Requisition</NavLink>
-          <NavLink exact activeStyle to="/Interview">Interview</NavLink>
+          <NavLink exact activeStyle to="/MyApprovals">Interview</NavLink>
           <NavLink exact activeStyle to="/JobWidget">Settings</NavLink>
           </NavMenu>
        
@@ -103,7 +103,7 @@ const Header = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
        <List className="list-popover">
-        <ListItem className="list-item flex-start-center">
+        <ListItem component={Link} to="/MyProfile" className="list-item flex-start-center">
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
@@ -118,7 +118,8 @@ const Header = () => {
                My Profile
                </ListItemText>
         </ListItem>
-        <ListItem className="list-item flex-start-center">
+        <ListItem  component={Link} to="/JobWidget" className="list-item flex-start-center" >
+        
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
@@ -130,6 +131,7 @@ const Header = () => {
                   },
                 }}
                >Settings</ListItemText> 
+             
         </ListItem>
         <ListItem className="list-item flex-start-center">
           <ListItemIcon>

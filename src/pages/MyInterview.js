@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     }
    });
 
-function Interview() {
+function MyInterview() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [alignment, setAlignment] = React.useState('web');
@@ -48,7 +48,8 @@ function Interview() {
          <Box className="start-flex mainheadingall">
         <Typography variant="h2" style={{fontSize:18}}>Interview</Typography></Box> 
         <Grid item align = "center" justify = "center" alignItems = "center" >
-         <NavLink exact className="menuneww" activeClassName="active_class" to="">My Interview</NavLink>
+        <NavLink exact className="menuneww" activeClassName="active_class" to="/MyApprovals">My Approvals</NavLink>
+         <NavLink exact className="menuneww" activeClassName="active_class" to="/MyInterview">My Interview</NavLink>
          <NavLink exact className="menuneww" activeClassName="active_class" to="">Schedule By Me</NavLink>
          <NavLink exact className="menuneww" activeClassName="active_class" to="">All Interviews</NavLink>
        </Grid>
@@ -362,4 +363,4 @@ function Interview() {
     )
 }
 
-export default Interview
+export default MyInterview

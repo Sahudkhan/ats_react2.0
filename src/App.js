@@ -11,11 +11,13 @@ import Alljobs from './pages/Alljobs';
 import Workflow from './pages/Workflow';
 import Analytics from './pages/Analytics';
 import Requisition from './pages/Requisition';
-import Interview from './pages/Interview';
+import MyInterview from './pages/MyInterview';
+import MyApprovals from './pages/MyApprovals';
 import JobWidget from './pages/Settings/CareerSetup/index';
 import ReviewCard from './pages/Settings/Configuration/index';
 import Authentication from './pages/Settings/Integrations/index'
 import UserManagement from './pages/Settings/Permissions/index'
+import MyProfile from './pages/Profile/index'
 import CreateJob from "./pages/CreateJob";
 import JobDetails from "./pages/JobDetails";
 
@@ -330,11 +332,13 @@ export default function App() {
         <Route path="/Workflow" component={Workflow} />
         <Route path="/Analytics" component={Analytics} />
         <Route path="/Requisition" component={Requisition} /> 
-        <Route path="/Interview" component={Interview} />
+        <Route path="/MyInterview" component={MyInterview} />
+        <Route path="/MyApprovals" component={MyApprovals} />
         <Route path="/JobWidget" component={JobWidget} />
         <Route path="/ReviewCard" component={ReviewCard} />
         <Route path="/Authentication" component={Authentication} />
         <Route path="/UserManagement" component={UserManagement}/>
+        <Route path="/MyProfile" component={MyProfile}/>
         <Route path="/CreateJob" component={CreateJob} />
         <Route path="/JobDetails" component={JobDetails} />
        
