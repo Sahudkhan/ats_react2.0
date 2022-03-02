@@ -301,7 +301,6 @@ const [values, setValues] = useState({});
  open={open}
  onClose={handleClose}
  onClick={handleClose}
- 
  transformOrigin={{ horizontal: 'right', vertical: 'top' }}
  anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 >
@@ -383,8 +382,8 @@ const [values, setValues] = useState({});
           // width="700px"
           confirmText="Submit"
           name= "Schedule Interview">
-          <div className="">
-          <FormBuilder size="sm" fields={[
+          <div className="p-5">
+          <FormBuilder size="md" fields={[
            { type: 'input', name: 'RULE_NAME', label: 'Attribute Name', required: false },
            { type: 'input', name: 'RULE_NAME', label: 'Applicable To', required: false },
          

@@ -5,7 +5,8 @@ import './App.css';
 
 import Header from './pages/Header';
 import Dashboard from './pages/Dashboard';
-import Candidates from './pages/Candidates';
+import Candidates from './pages/Candidate/Candidates';
+import UnassignCandidates from './pages/Candidate/UnassignCandidates';
 import Myjobs from './pages/Myjobs';
 import Alljobs from './pages/Alljobs';
 import Workflow from './pages/Workflow';
@@ -327,6 +328,7 @@ export default function App() {
       
       <Route path="/Dashboard" component={Dashboard} />
         <Route path="/Candidates" component={Candidates} />
+        <Route path="/UnassignCandidates" component={UnassignCandidates}/>
         <Route path="/Myjobs" component={Myjobs} />
         <Route path="/Alljobs" component={Alljobs} />
         <Route path="/Workflow" component={Workflow} />
