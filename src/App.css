@@ -611,6 +611,7 @@ font-size: 14px !important;
   font-size: 14px !important;
   color: #757575 !important;
   font-family: Roboto !important;
+  white-space: nowrap;
 }
 
 
@@ -619,6 +620,7 @@ font-size: 14px !important;
   font-weight: 400 !important;
   font-size: 14px !important;
   font-family: Roboto !important;
+  white-space: nowrap;
 }
 
 .fixed-table .table-container {
@@ -855,4 +857,18 @@ padding: 15px;
 }
 .textright{
   text-align: right !important;
+}
+
+.published {
+  text-decoration-line: underline !important;
+  color: #335AFF !important;
+}
+.approved{
+  color: #00CD37 !important;
+}
+.Pending{
+    color: #F3AF00 !important;
+}
+.rejected{
+    color: #DD4F24 !important;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
-import { Typography, Box, ListItem, Checkbox, TableRow, ListItemText, Popover, List, ListItemAvatar, TableHead, TableContainer, TablePagination, Table,  Paper, TableCell, TableBody, Grid, Button} from '@material-ui/core';
+import { Typography, Box, ListItem, Checkbox, TableRow, Drawer, ListItemText, Popover, List, ListItemAvatar, TableHead, TableContainer, TablePagination, Table,  Paper, TableCell, TableBody, Grid, Button} from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Avatar from '@mui/material/Avatar';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -11,6 +11,7 @@ import Scrollbars from "react-custom-scrollbars";
 import IconButton from '@material-ui/core/IconButton';
 import SearchComponent from "../../component/SearchComponent";
 import DropDownHiring from "../../component/DropDownHiring";
+import FullDrawerModal from "../../component/fullDrawerModal";
 
 const useStyles = makeStyles({
     table: {
@@ -32,6 +33,7 @@ function UnassignCandidates() {
     const [selectByStatus, setSelectByStatus] = useState("Map Activity");
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [openAdd, setOpenAdd] = useState(false);
+    const [openDrawer, setOpenDrawer] = useState(false);
     const handleChange = (
       event: React.MouseEvent<HTMLElement>,
       newAlignment: string,
@@ -47,6 +49,7 @@ function UnassignCandidates() {
       setAnchorEl(null);
     };
   
+
     return (
         <main>
         <Grid className="top_tabs">
@@ -146,7 +149,7 @@ function UnassignCandidates() {
 <Grid container spacing={3}>
       <Grid item xs={4}>
 
-      <Box className="folderbox">
+      <Box className="folderbox" onClick={() => setOpenDrawer(true)} >
 <Box>
 <ListItem alignItems="flex-start" style={{padding:0}}>
 <ListItemAvatar style={{minWidth:'15px', margin:'0px 10px 0px 0px', color:'#F3AF00'}}>
@@ -174,7 +177,7 @@ function UnassignCandidates() {
  anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 >
 <List className="list-popover">
- <ListItem className="list-item flex-start-center"    onClick={() => setOpenAdd(true)}>
+ <ListItem className="list-item flex-start-center" >
    <ListItemText
      
          primaryTypographyProps={{
@@ -391,6 +394,43 @@ Delete
     
 </Grid>
        
+
+<Drawer
+        anchor="bottom"
+       
+        open={openDrawer}
+        
+          onClose={
+            () => {
+              setOpenDrawer(false)
+            }
+          }
+          confirmClicked={
+            () => {
+              setOpenDrawer(false)
+            }
+          }
+          
+        >
+          <div className="drawer-open">
+          <div className="flex-between-center mb-30 cashrequest" style={{padding:'10px'}} >
+            <div class="requestHeader ">
+        <div className="title">
+        <Typography variant="subtitle1" sx={{ fontSize: 20 }} >
+        Alex D (Z0001)
+          </Typography>
+        </div>
+        </div>
+
+            </div>
+            <div className="">
+              
+              sdsads
+            </div>
+            </div>
+        </Drawer>
+
+
         </main>
     )
 }
