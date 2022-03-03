@@ -136,6 +136,14 @@ body {
   margin-bottom: 20px !important;
 }
 
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mb-7 {
+  margin-bottom: 7px !important;
+}
+
 .mv-15 {
   margin-top: 1.84vh !important;
   margin-bottom: 1.84vh !important;
@@ -858,6 +866,9 @@ padding: 15px;
 .textright{
   text-align: right !important;
 }
+.textcenter{
+  text-align: center !important;
+}
 
 .published {
   text-decoration-line: underline !important;
@@ -871,4 +882,38 @@ padding: 15px;
 }
 .rejected{
     color: #DD4F24 !important;
+}
+
+.listbox{
+  background: #FFFFFF;
+/* Gray 200 */
+border: 1px solid #ecebeb !important;
+border-radius: 3px !important;
+}
+
+.boxlistnew{
+  padding: 0px !important;
+  margin-top: 15px;
+}
+
+.pipilinee {
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 20px 0px;
+  margin-bottom: 20px;}
+
+  .pipe1top {
+    width: 74px;
+    height: 74px;
+    background: #F8F8F8;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 74px;
+    border-radius: 50%;
+    margin: 10px auto;
+    color: #172B4D;
+    text-align: center;
 }
