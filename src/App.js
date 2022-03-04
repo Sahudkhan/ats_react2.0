@@ -10,7 +10,8 @@ import UnassignCandidates from './pages/Candidate/UnassignCandidates';
 import Myjobs from './pages/Myjobs';
 import Alljobs from './pages/Alljobs';
 import Workflow from './pages/Workflow';
-import Analytics from './pages/Analytics';
+import Analytics from './pages/Analytics/Analytics';
+import CandidateDashboards from './pages/Analytics/index';
 import Requisition from './pages/Requisition';
 import MyInterview from './pages/MyInterview';
 import MyApprovals from './pages/MyApprovals';
@@ -333,6 +334,7 @@ export default function App() {
         <Route path="/Alljobs" component={Alljobs} />
         <Route path="/Workflow" component={Workflow} />
         <Route path="/Analytics" component={Analytics} />
+        <Route path="/CandidateDashboards" component={CandidateDashboards} />
         <Route path="/Requisition" component={Requisition} /> 
         <Route path="/MyInterview" component={MyInterview} />
         <Route path="/MyApprovals" component={MyApprovals} />

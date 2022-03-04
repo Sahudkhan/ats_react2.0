@@ -184,6 +184,9 @@ body {
 .w-100 {
   width: 100% !important;
 }
+.minw-100 {
+  min-width: 100% !important;
+}
 .w-90 {
   width: 90% !important;
   padding-left: 5%;
@@ -425,6 +428,17 @@ body {
   height: calc(100vh - 120px);
   padding-bottom: 30px;
 }
+
+.analyticmain {
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-top: 25px;
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 190px);
+  padding-bottom: 30px;
+}
+
 .top_tabs {
   display: flex;
   justify-content: center;
@@ -917,3 +931,17 @@ border-radius: 3px !important;
     color: #172B4D;
     text-align: center;
 }
+
+.dashbox_anayl {
+  background: #FFFFFF;
+  border: 1px solid #EBECF0;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 20%);
+  border-radius: 6px;
+  height: 310px;
+}
+
+.perforbox{padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background-color: #F8F8F8;}
