@@ -908,8 +908,16 @@ border-radius: 3px !important;
 .boxlistnew{
   padding: 0px !important;
   margin-top: 15px;
+  background-color: #fff;
 }
 
+.boxlist12{
+  background: #FFFFFF;
+border: 1px solid #EBECF0;
+box-sizing: border-box;
+border-radius: 4px;
+margin-top: 10px;
+}
 .pipilinee {
   display: flex;
   box-sizing: border-box;
@@ -945,3 +953,55 @@ border-radius: 3px !important;
     border-radius: 4px;
     margin-bottom: 15px;
     background-color: #F8F8F8;}
+
+ .recriut1 {/* Primary_5 */
+background: rgba(51, 90, 255, 0.05);
+text-align: center;
+padding: 80px 0px;
+border-radius: 4px;}
+
+.recriut2 {/* Primary_5 */
+  background: rgba(54, 179, 126, 0.05);
+  text-align: center;
+  padding: 80px 0px;
+  border-radius: 4px;}
+
+  .recriut3 {/* Primary_5 */
+    background: rgba(255, 174, 9, 0.05);
+    text-align: center;
+    padding: 80px 0px;
+    border-radius: 4px;}
+
+    .scroll_boxnav {
+      display: flex;
+      height: calc(100vh - 335px);
+      overflow: hidden;
+  }
+  .navi_main {
+    display: flex;
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    height: 100%;
+}
+  .workflowbox{background: #F8F8F8;
+    border: 1px solid #EBECF0;
+    box-sizing: border-box;
+    border-radius: 4px;
+      margin-right: 15px;
+      padding: 0;
+      width: 313px;
+  }
+  .primarymenu {
+    clear: both;
+    padding: 0px 15px;
+    overflow: auto;
+    flex: 1;
+    height: calc(100% - 65px);
+    font-family: Roboto, sans-serif;
+}
+.interbor{
+  padding: 15px;
+  border-bottom: 1px solid #EBECF0;
+}

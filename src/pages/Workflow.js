@@ -5,6 +5,8 @@ import UiLoader from "../component/app/loader";
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Scrollbars from "react-custom-scrollbars";
+import { GridOffOutlined } from "@material-ui/icons";
 
 const Workflow = (props) => {
   const [selected, setSelected] = useState(0);
@@ -146,6 +148,191 @@ const Workflow = (props) => {
     <Typography className="textcenter">Withdraw</Typography>
     
     </Grid>
+</Grid>
+
+<Grid className="start-flex  scroll_boxnav">
+
+  <Grid className="navi_main" spacing={2}>
+<Grid className="workflowbox">
+<Grid className="flex-between-center interbor">
+            <Typography variant="h2" style={{color:'#757575', fontSize:14, fontWeight:600}}>Interview 1 </Typography>
+            <Grid className="flex-center">
+            <Typography variant="body1">30</Typography>
+           </Grid></Grid>
+
+  <Box className="primarymenu">
+  <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Sahud khan</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+  </Box>
+</Grid>
+
+<Grid className="workflowbox">
+<Grid className="flex-between-center interbor">
+            <Typography variant="h2" style={{color:'#757575', fontSize:14, fontWeight:600}}>Interview 1 </Typography>
+            <Grid className="flex-center">
+            <Typography variant="body1">30</Typography>
+           </Grid></Grid>
+
+  <Box className="primarymenu">
+  <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Sahud khan</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+  </Box>
+</Grid>
+
+
+<Grid className="workflowbox">
+<Grid className="flex-between-center interbor">
+            <Typography variant="h2" style={{color:'#757575', fontSize:14, fontWeight:600}}>Interview 1 </Typography>
+            <Grid className="flex-center">
+            <Typography variant="body1">30</Typography>
+           </Grid></Grid>
+
+  <Box className="primarymenu">
+  <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Sahud khan</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+      <ListItem className="boxlist12">
+         <ListItemText>
+          <Typography variant="h6">Alfonso Mango</Typography>
+        </ListItemText>
+      </ListItem>
+
+  </Box>
+</Grid>
+
+
+</Grid>
 </Grid>
 
         </div>

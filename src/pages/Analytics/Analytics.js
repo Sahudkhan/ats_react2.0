@@ -545,6 +545,100 @@ function Analytics() {
 
 
 
+          
+          <Grid item xs={12} sm={6} md={6}>
+          <Box className="dashbox_anayl">
+          <Grid container alignContent="center" justifyContent="space-between">
+                                   
+                                 <Typography variant="h2" component="div" style={{padding:16, fontSize:'16px'}} >Overall Recruitment Cycle </Typography>
+                                   
+                                 <Grid className="flex-center p-5">
+                                 <TextField
+                                        id="standard-select-currency"
+                                        select
+                                        value={value}
+                                        onChange={(e) => setValue(e.target.value)}
+                                    >
+                                        {sourcetype.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
+
+                                        
+                                    </Grid>
+                                </Grid>
+                                <Scrollbars style={{height:'calc(100% - 75px)'}}>
+                            <Grid container spacing={2} >
+                            <Grid item xs={4}>
+                              <div className="recriut1">
+                                <Typography variant="body2" style={{fontSize:30, color:'#335AFF', fontWeight:400, marginBottom:4}}>200</Typography>
+                                <Typography style={{color:'#335AFF'}}>Total Position</Typography>
+                                </div>
+                             </Grid>
+
+                             <Grid item xs={4}>
+                             <div className="recriut2">
+                                <Typography variant="body2" style={{fontSize:30, color:'#36B37E', fontWeight:400, marginBottom:4}}>350</Typography>
+                                <Typography style={{color:'#36B37E'}}>Hired</Typography>
+                                </div>
+                             </Grid>
+
+                             <Grid item xs={4}>
+                             <div className="recriut3">
+                                <Typography variant="body2" style={{fontSize:30, color:'#FFAE09', fontWeight:400, marginBottom:4}}>100</Typography>
+                                <Typography style={{color:'#FFAE09'}}>Pending</Typography>
+                                </div>
+                             </Grid>
+
+                            </Grid>
+                            </Scrollbars>
+                         </Box>
+          </Grid>
+
+          <Grid item xs={4} sm={4} md={4}>
+          <Box className="dashbox_anayl">
+         <Typography variant="h2" style={{padding:16, fontSize:'16px'}}>Job Status</Typography>
+         <Scrollbars style={{height:'calc(100% - 75px)'}}>
+           </Scrollbars>
+           </Box>
+           </Grid>
+
+          <Grid item xs={8} sm={8} md={8}>
+          <Box className="dashbox_anayl">
+         <Typography variant="h2" style={{padding:16, fontSize:'16px'}}>Interview Per Candidate</Typography>
+         <Scrollbars style={{height:'calc(100% - 75px)'}}>
+         <TableContainer className="table-container-default table-container">
+        <Table aria-label="table">
+          <TableHead>
+            <TableRow>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">Job Opening</TableCell>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">Candidate Apply</TableCell>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">Interview Schedule</TableCell>
+             <TableCell className="tablehead-14-roboto border-bottom-tab">Average</TableCell>
+             
+         
+            </TableRow>
+          </TableHead>
+          <TableBody>
+           
+      <TableRow>        
+      <TableCell className="tablebody-14-roboto border-bottom-tab">Human Resource</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">2</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">30</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">0.5</TableCell>
+
+     </TableRow>
+
+
+          </TableBody>
+        </Table>
+      </TableContainer>
+         </Scrollbars>
+          </Box>
+          </Grid>
+
           </Grid>
        </Grid>
        </>
