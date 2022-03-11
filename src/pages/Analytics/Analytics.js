@@ -395,7 +395,7 @@ function Analytics() {
                                     </Grid>
                                 </Grid>
                                 <Scrollbars style={{height:'calc(100% - 75px)'}}>
-                            <Grid className="p-5">
+                            <Grid style={{padding:'10px 20px'}}>
                               
                                 <Grid className="perforbox" container direction="column">
                                         <Grid container alignItems="center" justifyContent="space-between">
@@ -569,8 +569,8 @@ function Analytics() {
                                         
                                     </Grid>
                                 </Grid>
-                                <Scrollbars style={{height:'calc(100% - 75px)'}}>
-                            <Grid container spacing={2} >
+                                
+                            <Grid style={{padding:'10px 20px'}} container spacing={2} >
                             <Grid item xs={4}>
                               <div className="recriut1">
                                 <Typography variant="body2" style={{fontSize:30, color:'#335AFF', fontWeight:400, marginBottom:4}}>200</Typography>
@@ -593,7 +593,7 @@ function Analytics() {
                              </Grid>
 
                             </Grid>
-                            </Scrollbars>
+                           
                          </Box>
           </Grid>
 
@@ -624,6 +624,38 @@ function Analytics() {
           <TableBody>
            
       <TableRow>        
+      <TableCell className="tablebody-14-roboto border-bottom-tab">Human Resource</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">2</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">30</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">0.5</TableCell>
+
+     </TableRow>
+
+     <TableRow>        
+      <TableCell className="tablebody-14-roboto border-bottom-tab">Human Resource</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">2</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">30</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">0.5</TableCell>
+
+     </TableRow>
+
+     <TableRow>        
+      <TableCell className="tablebody-14-roboto border-bottom-tab">Human Resource</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">2</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">30</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">0.5</TableCell>
+
+     </TableRow>
+
+     <TableRow>        
+      <TableCell className="tablebody-14-roboto border-bottom-tab">Human Resource</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">2</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">30</TableCell>
+      <TableCell className="tablebody-14-roboto border-bottom-tab">0.5</TableCell>
+
+     </TableRow>
+
+     <TableRow>        
       <TableCell className="tablebody-14-roboto border-bottom-tab">Human Resource</TableCell>
       <TableCell className="tablebody-14-roboto border-bottom-tab">2</TableCell>
       <TableCell className="tablebody-14-roboto border-bottom-tab">30</TableCell>

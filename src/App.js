@@ -17,11 +17,12 @@ import MyInterview from './pages/MyInterview';
 import MyApprovals from './pages/MyApprovals';
 import JobWidget from './pages/Settings/CareerSetup/index';
 import ReviewCard from './pages/Settings/Configuration/index';
-import Authentication from './pages/Settings/Integrations/index'
-import UserManagement from './pages/Settings/Permissions/index'
-import MyProfile from './pages/Profile/index'
+import Authentication from './pages/Settings/Integrations/index';
+import UserManagement from './pages/Settings/Permissions/index';
+import MyProfile from './pages/Profile/index';
 import CreateJob from "./pages/CreateJob";
 import JobDetails from "./pages/JobDetails";
+import CandidatesDetails from "./pages/Candidate/CandidatesDetails";
 
 import { createTheme, ThemeProvider, alpha } from "@material-ui/core/styles";
 const secondaryColor = "rgba(51, 90, 255, 1)";
@@ -345,6 +346,7 @@ export default function App() {
         <Route path="/MyProfile" component={MyProfile}/>
         <Route path="/CreateJob" component={CreateJob} />
         <Route path="/JobDetails" component={JobDetails} />
+        <Route path="/CandidatesDetails" component={CandidatesDetails} />
        
         <Route path="/" exact component={Dashboard} />
       </Switch>

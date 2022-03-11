@@ -13,6 +13,8 @@ import {
 
 const component = [
   lazy(() => import("./CandidateDashboards")),
+  lazy(() => import("./JobopeningDashboards")),
+  lazy(() => import("./InterviewDashboards")),
 
 
 ];

@@ -111,7 +111,8 @@ function Candidates() {
         <Avatar alt="Travis Howard" src="/img/bitmap.png" />
         </ListItemAvatar>
         <ListItemText>
-        <Typography variant="h6" style={{fontSize:"16px", marginBottom:8}}> Sahud Khan</Typography>
+        <Typography variant="h6" style={{fontSize:"16px", marginBottom:8}}>
+        <Link to="/CandidatesDetails"  underline="none"> Sahud Khan</Link></Typography>
          <Typography variant="body1"  >khansahud@gmail.com</Typography>
          <Typography  variant="body1">+91-99999 09876</Typography>
          </ListItemText>
