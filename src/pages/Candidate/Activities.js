@@ -69,14 +69,27 @@ className="css-7551ie h-100 w-100"
           </TableHead>
           <TableBody>
            
-                  <TableRow className="bordernewcollumn">
+          <TableRow className="bordernewcollumn">
          <TableCell className="tablebody-14-roboto border-bottom-tab">Screening</TableCell>
-         <TableCell >Completed </TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab">Completed </TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button><StarIcon/> 4 <ArrowForwardIosIcon/></Button></TableCell>
+          <Button><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">-</TableCell>
+
+       </TableRow>
+
+       <TableRow className="bordernewcollumn">
+         <TableCell className="tablebody-14-roboto border-bottom-tab">Screening</TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab">Completed </TableCell>
+          <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
+          <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
+          <TableCell className="tablebody-14-roboto border-bottom-tab">
+          <Button><StarIcon style={{height:'20px', color:'#999',}}/><ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
+          <TableCell className="tablebody-14-roboto border-bottom-tab">
+          <Button className="ss">Schdule</Button>  
+          </TableCell>
 
        </TableRow>
 
