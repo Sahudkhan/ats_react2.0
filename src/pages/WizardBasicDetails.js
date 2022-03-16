@@ -46,7 +46,7 @@ function WizardBasicDetails() {
               { type: 'select', name: 'Entity', label: 'Entity', options:[{id:1,name:"Design"},{id:2,name:"Software"}], required: true },
               { type: 'select', name: 'Number_Position', label: 'Number Of Position', options:[{id:1,name:"Design"},{id:2,name:"Software"}], required: true },
               { type: 'select', name: 'Location', label: 'Location', options:[{id:1,name:"Design"},{id:2,name:"Software"}], required: true },
-              { type: 'date', name: 'EXTYPE_NAME', label: 'Name', required: true },
+              { type: 'inputdate', name: 'Opening', label: 'Opening Valid Till Date', min: 25550, max: 0, },
               { type: 'select', name: 'Industry', label: 'Industry', options:[{id:1,name:"Automobiles"}], required: true },
               { type: 'select', name: 'Function', label: 'Function', options:[{id:1,name:"Analyst"}], required: true },
               { type: 'select', name: 'TotalExperience', label: 'Total Experience', options:[{id:1,name:"Automobiles"}], required: true },
