@@ -32,7 +32,7 @@ function WizardBasicDetails() {
        <div className="w-100">
      <Box sx={{ padding: '20px', overflow: 'hidden' }}>
       <Grid className="flex-between-center mb-20 mt-4" >
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" style={{fontSize:16}}>
           Basic Details
           </Typography>
        

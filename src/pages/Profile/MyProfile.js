@@ -23,14 +23,22 @@ import IconButton from '@material-ui/core/IconButton';
 import Scrollbars from "react-custom-scrollbars";
 
 
-function JobsPrefix() {
+function MyProfile() {
+  const [values, setValues] = useState({});
+  const handleChange = (e) => {
+    if (e.target.value !== values[e.target.name]) {
+      let newValues={...values}
+      newValues={ ...values, [e.target.name]: e.target.value }
+      setValues(newValues);
+    }
+  }
 
 
     return (
        <>
        <Grid className="css-1yqw6cw">
        <Grid container>
-      <Grid className="flex-between-center mb-30 " >
+      <Grid className="flex-between-center mb-20 " >
           <Typography variant="subtitle1" sx={{ fontSize: 20 }} >
         My Profile
           </Typography>
@@ -41,7 +49,17 @@ function JobsPrefix() {
 
      
       <Grid className="w-100 flex-column " style={{height:"77vh"}}>
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <FormBuilder size="md" fields={[
+              
+              { type: 'input', name: 'firstName', label: 'First Name', required: true },
+              { type: 'input', name: 'lastName', label: 'Last Name', required: true },
+              { type: 'input', name: 'mobileNUmber', label: 'Mobile No.', required: true },
+              { type: 'input', name: 'position', label: 'Position', required: true },
+            
+              
+
+             
+            ]} values={values} inputHandler={handleChange} />
 
       </Grid>
     </Grid>
@@ -50,4 +68,4 @@ function JobsPrefix() {
     )
 }
 
-export default JobsPrefix
+export default MyProfile

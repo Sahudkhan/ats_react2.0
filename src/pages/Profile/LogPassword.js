@@ -4,22 +4,51 @@ import FormBuilder, { MyTable } from "../../component/formBuilder";
 
 
 
-function JobWidget() {
- const handleChange = (e) => {
-        console.log("target", e.target)
-      }
+function LogPassword() {
+  const [values, setValues] = useState({});
+  const handleChange = (e) => {
+    if (e.target.value !== values[e.target.name]) {
+      let newValues={...values}
+      newValues={ ...values, [e.target.name]: e.target.value }
+      setValues(newValues);
+    }
+  }
 
  return (
        <>
        <div className="css-1yqw6cw">
        <div container>
-      <div className="flex-between-center mb-30 " >
+      <div className="flex-between-center mb-20 " >
           <Typography variant="subtitle1" sx={{ fontSize: 20 }} >
          Login Password
           </Typography>
         
+          </div>
+          <Grid className="w-100 flex-column " style={{height:"77vh"}}>
+          <Grid container spacing={3}>
       
-      </div>
+      <Grid item xs={6}>
+      <FormBuilder size="xs" fields={[
+              
+              { type: 'input', name: 'firstName', label: 'Email ID used as login', required: true },
+              { type: 'input', name: 'lastName', label: 'Current password', required: true },
+              { type: 'input', name: 'mobileNUmber', label: 'New password', required: true },
+              { type: 'input', name: 'position', label: 'Confirm password', required: true },
+            
+              
+
+             
+            ]} values={values} inputHandler={handleChange} />
+        </Grid>
+      <Grid item xs={6}>
+zxcdcd
+        </Grid>
+        </Grid>
+
+     
+
+      </Grid>
+     
 
 
      
@@ -29,4 +58,4 @@ function JobWidget() {
     )
 }
 
-export default JobWidget
+export default LogPassword

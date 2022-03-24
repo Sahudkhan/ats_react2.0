@@ -31,20 +31,20 @@ function WizardAdvanceDetails() {
        <div className="w-100">
      <Box sx={{ padding: '20px', overflow: 'hidden' }}>
       <Grid className=" mb-20 mt-4" >
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" style={{fontSize:16, marginBottom:'20px'}}>
           Advance Details
           </Typography>
        <Typography variant="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</Typography>
       </Grid>
      
-<Grid className="cardList">
+{/* <Grid className="cardList">
 <Grid className="flex-between-center" >
-          <Typography variant="subtitle1">
-          Basic Details
+          <Typography variant="body1">
+          Multiple Choice
           </Typography>
        asdf
       </Grid>
-  </Grid>
+  </Grid> */}
 
       <Box>
           <Button 

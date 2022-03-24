@@ -31,7 +31,7 @@ function WizardPublish() {
        <div className="w-100 mt-30">
        <Box sx={{ padding: '0px 20px', overflow: 'hidden' }}>
        <Grid className="flex-between-center mb-20" >
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" style={{fontSize:16,}}>
          Publish
           </Typography>
        

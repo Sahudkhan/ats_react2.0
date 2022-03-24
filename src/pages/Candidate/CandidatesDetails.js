@@ -123,78 +123,7 @@ function CandidatesDetails() {
       </Grid>
       </Grid>
 
-     <Grid className="css-7551ie mt-30">
-      <Card className="cardbox">
-       
-       <Grid container>
-      
-       <Grid item xs={3}>
-         <Typography variant="h6" style={{fontSize:"18px"}}> Front End Developer (React)</Typography>
-         <Typography variant="body1" className="mt-10" >Job Id : #12310074</Typography>
-         </Grid>
-       <Grid item xs={6}>
-        
-     <Box 
-        sx={{ display: 'flex', justifyContent: 'space-between' }}
-     >
-          <Box>
-          <Typography variant="h6" className="numberjobs">200</Typography>
-          <Typography variant="body1" >All Active </Typography>
-         
-          </Box>
-
-          <Box>
-          <Typography variant="h6" className="numberjobs">80</Typography>     
-         <Typography variant="body1" >New </Typography>
-         </Box>
-
-          <Box>
-          <Typography variant="h6" className="numberjobs">100</Typography>
-          <Typography variant="body1" >In Progress </Typography>
-      
-          </Box>
-
-          <Box>
-          <Typography variant="h6" className="numberjobs">29</Typography>
-          <Typography variant="body1" >On Hold </Typography>
-         
-          </Box>
-
-          <Box>
-          <Typography variant="h6" className="numberjobs">44</Typography>
-          <Typography variant="body1" >Selected </Typography>
-       
-          </Box>
-
-          <Box>
-          <Typography variant="h6" className="numberjobs">555</Typography>
-          <Typography variant="body1" >Hired </Typography>
-         
-          </Box>
-
-
-       </Box>
-         </Grid>
-
-      <Grid item xs={3} >
-         <Box sx={{ display: 'flex', justifyContent: 'space-around' }} >
-         
-         <Box>
-         <Typography variant="body1" color="subtitle1"  className="numberjobs2">Feb 24, 2021</Typography>
-         <Typography variant="body1" >Published On</Typography>
-         </Box>
-
-       <Box>
-       <Typography variant="body1" color="subtitle1"  className="numberjobs2">Feb 24, 2021</Typography>
-       <Typography variant="body1">Expiring On</Typography>
-      </Box>
-
-       </Box>
-
-</Grid>
-      </Grid>
-     </Card>
-     </Grid>
+  
       <TabPanel value={0}>
      
       <Overview/>
