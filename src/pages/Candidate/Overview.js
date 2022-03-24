@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 
-import { Typography, Box, ListItem, TableRow, Popover, LinearProgress, List, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
+import { Typography, Box, ListItem, TableRow, Button, Accordion, AccordionSummary, AccordionDetails, Popover, LinearProgress, List, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -10,7 +10,11 @@ import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import Scrollbars from "react-custom-scrollbars";
 import IconButton from '@material-ui/core/IconButton';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+
 import DropDownHiring from "../../component/DropDownHiring";
 const useStyles = makeStyles({
   table: {
@@ -39,14 +43,13 @@ function Overview() {
   const [initialMount, setInitialMount] = useState(true);
   const [selectByStatus, setSelectByStatus] = useState("Map Activity");
   const [selectedIndex, setSelectedIndex] = React.useState(1);
-
   const handleListItemClick = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     index: number,
   ) => {
     setSelectedIndex(index);
   };
- 
+
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -57,8 +60,28 @@ function Overview() {
     setAnchorEl(null);
   };
 
-
-
+  const ExpandableTableRow = ({ children, expandComponent, ...otherProps }) => {
+    const [isExpanded, setIsExpanded] = React.useState(false);
+  
+    return (
+      <>
+        <TableRow {...otherProps}>
+          <TableCell padding="checkbox">
+            <IconButton onClick={() => setIsExpanded(!isExpanded)}>
+              {isExpanded ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+            </IconButton>
+          </TableCell>
+          {children}
+        </TableRow>
+        {isExpanded && (
+          <TableRow>
+            <TableCell padding="checkbox" />
+            {expandComponent}
+          </TableRow>
+        )}
+      </>
+    );
+  };
     return (
         <>
      
@@ -232,6 +255,7 @@ function Overview() {
     
        </Grid>
 
+<Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mt-30">
             <Typography variant="body2">Details </Typography>
             <Grid className="flex-center">
@@ -285,12 +309,12 @@ function Overview() {
         <Typography variant="body1"  style={{color:"#757575", marginBottom:15}}>Experience</Typography>
         
         <Grid className="w-100 start-flex mt-30">
-<Box>
+<Box className="borderleftnew">
   <Typography>Design Studio</Typography>
   <Typography>Senior UI UX Designer</Typography>
   <Typography>Jan 2020 - Mar 2021</Typography>
 </Box>
-<Box>
+<Box className="borderleftnew">
   <Typography>Design Studio</Typography>
   <Typography>Senior UI UX Designer</Typography>
   <Typography>Jan 2020 - Mar 2021</Typography>
@@ -343,6 +367,145 @@ function Overview() {
                           </Table>
                           </TableContainer>
         </Grid>
+
+        </Grid>
+
+        <Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">Emails </Typography>
+            <Grid className="flex-center">
+            <Button
+                  variant="contained"
+                  color="secondary"
+                  disableElevation={true}
+                  disableRipple={true}
+                  style={{height:'35px'}}
+                  className="preve"
+                 >
+                 Compose
+                </Button>
+ </Grid>
+</Grid>
+        <Accordion style={{boxShadow:'0px 2px 1px 1px #eee'}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+         
+        >
+         
+          <Typography
+           className="flex-between-center w-100"
+          >
+            Pre-Boarding Form Link !!
+         <span>Dec 01, 2021, 11:42 AM | 22 days ago</span>
+           
+          </Typography>
+        
+        </AccordionSummary>
+        <AccordionDetails style={{display:'block'}}>
+          <Typography>
+          Dear ALOKSRIVASTAVA,
+          </Typography>
+
+          <Typography> Kindly fill the following Pre-boarding form provided in the link given below to 
+          proceed with your hiring process. Once you fill all details required as per the form, 
+          we will cross check the details and verify the details provided at our end and will update 
+          you if we require any further information.Please find the form link as mentioned. </Typography>
+          <Typography>
+          Form Link :https://demo-ats.zimyo.com/candidate_fill_details&amp;id=NzQ0OS01MTY-
+
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+         
+        >
+         
+          <Typography
+           className="flex-between-center w-100"
+          >
+            Pre-Boarding Form Link !!
+         <span>Dec 01, 2021, 11:42 AM | 22 days ago</span>
+           
+          </Typography>
+        
+        </AccordionSummary>
+        <AccordionDetails style={{display:'block'}}>
+          <Typography>
+          Dear ALOKSRIVASTAVA,
+          </Typography>
+
+          <Typography> Kindly fill the following Pre-boarding form provided in the link given below to 
+          proceed with your hiring process. Once you fill all details required as per the form, 
+          we will cross check the details and verify the details provided at our end and will update 
+          you if we require any further information.Please find the form link as mentioned. </Typography>
+          <Typography>
+          Form Link :https://demo-ats.zimyo.com/candidate_fill_details&amp;id=NzQ0OS01MTY-
+
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      </Grid>
+
+
+
+      <Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">Calls </Typography>
+            <Grid className="flex-center">
+            <Button
+                  variant="contained"
+                  color="secondary"
+                  disableElevation={true}
+                  disableRipple={true}
+                  style={{height:'35px'}}
+                 >
+                 Log Calls
+                </Button>
+ </Grid>
+</Grid>
+<Grid className="detailbox">
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell padding="checkbox"/>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Call</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Response</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Date	</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Time from</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Time to</TableCell>
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+         
+            <ExpandableTableRow
+             
+              expandComponent={<TableCell colSpan="6">
+                <Typography>
+                Extremely satisfied mollit non deserunt ullamco est sit aliqua dolor do amet sint
+                ullamco est sit aliqua dolor do amet sin...
+                </Typography>
+              </TableCell>}
+            >
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Data Scientist</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Devteam</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">connected</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">09:54:00</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">09:54:00</TableCell>
+            </ExpandableTableRow>
+         
+        </TableBody>
+      </Table>
+      </Grid>
+</Grid>
+
 
       </Grid>
       </Grid>
