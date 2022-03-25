@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-
 import { Typography, Box, ListItem, TableRow, Button, Accordion, AccordionSummary, AccordionDetails, Popover, LinearProgress, List, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import Scrollbars from "react-custom-scrollbars";
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import DropDownHiring from "../../component/DropDownHiring";
 const useStyles = makeStyles({
   table: {
@@ -418,7 +417,7 @@ function Overview() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion >
+      <Accordion style={{boxShadow:'0px 2px 1px 1px #eee'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -500,6 +499,270 @@ function Overview() {
               <TableCell className="tablehead-14-roboto border-bottom-tab">09:54:00</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">09:54:00</TableCell>
             </ExpandableTableRow>
+         
+        </TableBody>
+      </Table>
+      </Grid>
+</Grid>
+
+
+<Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">Notes </Typography>
+           
+</Grid>
+<Grid className="detailbox">
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Documents </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Upload Date </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">	Upload By</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">&nbsp;	</TableCell>
+            
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+         
+              <TableCell className="tablehead-14-roboto border-bottom-tab"><PictureAsPdfIcon/> 2022_01_11_02:53:54_NirajCv-10-12-2021.pdf</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">	Jan 11, 2022</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+         
+         
+        </TableBody>
+      </Table>
+
+      <CKEditor
+                    editor={ ClassicEditor }
+                    data=""
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        console.log( { event, editor, data } );
+                    } }
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
+
+      </Grid>
+</Grid>
+
+
+<Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">Attachment </Typography>
+            <Grid className="flex-center">
+            <Button
+                  variant="contained"
+                  color="secondary"
+                  disableElevation={true}
+                  disableRipple={true}
+                  style={{height:'35px'}}
+                 >
+                + Add
+                </Button>
+ </Grid>
+</Grid>
+<Grid className="detailbox">
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Documents </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Upload Date </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">	Upload By</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">&nbsp;	</TableCell>
+            
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+         
+              <TableCell className="tablehead-14-roboto border-bottom-tab"><PictureAsPdfIcon/> 2022_01_11_02:53:54_NirajCv-10-12-2021.pdf</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">	Jan 11, 2022</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">
+              <Grid className="flex-center">
+            <Box>
+          <IconButton 
+           onClick={handleClick}
+         style={{padding:0}}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Popover
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+      >
+       <List className="list-popover">
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               View
+               </ListItemText>
+        </ListItem>
+
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               Download
+               </ListItemText>
+        </ListItem>
+      
+       
+        </List>
+      </Popover>
+      </Box>
+ </Grid>
+              </TableCell>
+         
+         
+        </TableBody>
+      </Table>
+      </Grid>
+</Grid>
+
+<Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">Interviews </Typography>
+           
+</Grid>
+<Grid className="detailbox">
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Department </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Entity</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
+            
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+         
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+         
+         
+        </TableBody>
+      </Table>
+      </Grid>
+</Grid>
+
+<Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">Reviews </Typography>
+           
+</Grid>
+<Grid className="detailbox">
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Department </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Entity</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
+            
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+         
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+         
+         
+        </TableBody>
+      </Table>
+      </Grid>
+</Grid>
+
+<Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">Tags </Typography>
+           
+</Grid>
+<Grid className="detailbox">
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Department </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Entity</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
+            
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+         
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+         
+         
+        </TableBody>
+      </Table>
+      </Grid>
+</Grid>
+
+
+<Grid className="maincanidbox">
+       <Grid className="w-100 flex-between-center mb-20">
+            <Typography variant="body2">FeedBack </Typography>
+           
+</Grid>
+<Grid className="detailbox">
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Department </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Entity</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
+            
+
+          </TableRow>
+        </TableHead>
+        <TableBody>
+         
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+         
          
         </TableBody>
       </Table>
