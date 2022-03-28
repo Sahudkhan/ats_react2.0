@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Typography, Box, ListItem, TableRow, ListItemText, Popover, List, ListItemAvatar, TableHead, TableContainer, TablePagination, Table,  Paper, TableCell, TableBody, Grid, Button} from '@material-ui/core';
+import { Typography, Box, ListItem, TableRow, ListItemText, Checkbox, Popover, List, ListItemAvatar, TableHead, TableContainer, TablePagination, Table,  Paper, TableCell, TableBody, Grid, Button} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import ListIcon from '@mui/icons-material/List';
 import FilterListIcon from "@material-ui/icons/FilterList";
@@ -11,7 +11,7 @@ import SearchComponent from "../component/SearchComponent";
 import CustomDropDown from "../component/CustomDropDown";
 import FitlerDrawer from "../component/FitlerDrawer";
 import Scrollbars from "react-custom-scrollbars";
-
+import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 const useStyles = makeStyles({
   table: {
 fontSize:12,
@@ -26,6 +26,7 @@ fontSize:12,
 
 function Jobcandidates() {
   const classes = useStyles();
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   const [filter, setfilter] = useState({});
   const [openDrawer, setopenDrawer] = useState(false);
   const [openFitlerDrawer, setOpenFilterDrawer] = useState(false);
@@ -403,6 +404,412 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
           </TableBody>
         </Table>
       </TableContainer>
+
+      <Grid
+  container
+  direction="row"
+  justifyContent="flex-start"
+  alignItems="flex-start"
+>
+  <Grid className="maincandibox">
+  <Box className="flex-between-center headingmian">
+  <Box>
+                 <ListItem alignItems="flex-start" >
+                 <ListItemText>
+
+                 <Typography variant="h6"><Checkbox {...label} style={{padding:"0px 5px 0px 0px"}}/> Pending for welcome mail</Typography>
+                 </ListItemText>
+                 </ListItem>
+                 </Box>
+                 <Box>
+   <IconButton 
+    onClick={handleClick}
+  style={{padding:0}}
+   >
+     <MoreVertIcon />
+   </IconButton>
+  
+</Box>
+  </Box>         
+
+<Grid className="candidatecanva">
+<Box className="candipapper">
+                  <Box>
+                    
+                  <ListItem alignItems="flex-start" style={{padding:0}}>
+          <ListItemAvatar style={{minWidth:'18px', marginTop:0}}>
+          <Checkbox {...label} style={{padding:"0px 5px 0px 0px"}}/>
+          </ListItemAvatar>
+          <ListItemText>
+          <Typography variant="h6" > Rohit Sharma</Typography>
+            <Typography variant="body1"  > 
+            ronit@zimyo.com
+            </Typography>
+            </ListItemText>
+          </ListItem>
+                
+                  
+                </Box>
+                
+                 
+                  <Box>
+                 
+   <IconButton 
+    onClick={handleClick}
+  style={{padding:0, marginTop:'-17px'}}
+   >
+     <MoreVertIcon />
+   </IconButton>
+   <Popover
+ anchorEl={anchorEl}
+ id="account-menu"
+ open={open}
+ onClose={handleClose}
+ onClick={handleClose}
+ 
+ transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+ anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+>
+<List className="list-popover">
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+        Remove from this job
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+       Mark as withdraw
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Reject
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Messages
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Add to another job
+        </ListItemText>
+ </ListItem>
+
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Hold
+        </ListItemText>
+ </ListItem>
+
+
+ </List>
+</Popover>
+<DragIndicatorIcon/>
+</Box>
+ </Box>
+
+ <Box className="candipapper">
+                  <Box>
+                    
+                  <ListItem alignItems="flex-start" style={{padding:0}}>
+          <ListItemAvatar style={{minWidth:'18px', marginTop:0}}>
+          <Checkbox {...label} style={{padding:"0px 5px 0px 0px"}}/>
+          </ListItemAvatar>
+          <ListItemText>
+          <Typography variant="h6" > Rohit Sharma</Typography>
+            <Typography variant="body1"  > 
+            ronit@zimyo.com
+            </Typography>
+            </ListItemText>
+          </ListItem>
+                
+                  
+                </Box>
+                
+                 
+                  <Box>
+                 
+   <IconButton 
+    onClick={handleClick}
+  style={{padding:0, marginTop:'-17px'}}
+   >
+     <MoreVertIcon />
+   </IconButton>
+   <Popover
+ anchorEl={anchorEl}
+ id="account-menu"
+ open={open}
+ onClose={handleClose}
+ onClick={handleClose}
+ 
+ transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+ anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+>
+<List className="list-popover">
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+        Remove from this job
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+       Mark as withdraw
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Reject
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Messages
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Add to another job
+        </ListItemText>
+ </ListItem>
+
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Hold
+        </ListItemText>
+ </ListItem>
+
+
+ </List>
+</Popover>
+<DragIndicatorIcon/>
+</Box>
+ </Box>
+
+
+ <Box className="candipapper">
+                  <Box>
+                    
+                  <ListItem alignItems="flex-start" style={{padding:0}}>
+          <ListItemAvatar style={{minWidth:'18px', marginTop:0}}>
+          <Checkbox {...label} style={{padding:"0px 5px 0px 0px"}}/>
+          </ListItemAvatar>
+          <ListItemText>
+          <Typography variant="h6" > Rohit Sharma</Typography>
+            <Typography variant="body1"  > 
+            ronit@zimyo.com
+            </Typography>
+            </ListItemText>
+          </ListItem>
+                
+                  
+                </Box>
+                
+                 
+                  <Box>
+                 
+   <IconButton 
+    onClick={handleClick}
+  style={{padding:0, marginTop:'-17px'}}
+   >
+     <MoreVertIcon />
+   </IconButton>
+   <Popover
+ anchorEl={anchorEl}
+ id="account-menu"
+ open={open}
+ onClose={handleClose}
+ onClick={handleClose}
+ 
+ transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+ anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+>
+<List className="list-popover">
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+        Remove from this job
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+       Mark as withdraw
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Reject
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Messages
+        </ListItemText>
+ </ListItem>
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Add to another job
+        </ListItemText>
+ </ListItem>
+
+
+ <ListItem className="list-item flex-start-center">
+   <ListItemText
+         primaryTypographyProps={{
+           style: {
+             fontWeight: 500,
+             color: "inherit",
+           },
+         }}
+        >
+     Hold
+        </ListItemText>
+ </ListItem>
+
+
+ </List>
+</Popover>
+<DragIndicatorIcon/>
+</Box>
+ </Box>
+</Grid>
+  </Grid>
+ 
+
+</Grid>
      </Scrollbars>
     </Box>
    
