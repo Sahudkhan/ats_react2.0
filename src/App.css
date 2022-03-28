@@ -1124,3 +1124,10 @@ border-radius: 6px;
     border: none;
     padding-left: 0px;
   }
+
+  .newmailid {
+    overflow-y: auto;
+    height: calc(100vh - 200px);
+    padding-top: 20px;
+    overflow-x: hidden;
+}

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Typography, Box, ListItem, TableRow, Button, Accordion, AccordionSummary, AccordionDetails, Popover, LinearProgress, List, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
+import { Typography, Box, ListItem, TableRow, Button, TextField, Chip, Accordion, AccordionSummary, AccordionDetails, Popover, LinearProgress, List, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
+import Stack from '@mui/material/Stack';
 import Scrollbars from "react-custom-scrollbars";
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -15,6 +16,9 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import DropDownHiring from "../../component/DropDownHiring";
+import FormBuilder, { MyTable } from "../../component/formBuilder";
+import CustomModal from "../../component/customModal"
+import CustomModalfullwidth from "../../component/customModalfullwidth";
 const useStyles = makeStyles({
   table: {
 fontSize:12,
@@ -49,16 +53,35 @@ function Overview() {
     setSelectedIndex(index);
   };
 
-
+  const [isEdit, setisEdit] = useState(false);
+  const [openAdd2, setOpenAdd2] = useState(false)
+  const [openAdd, setOpenAdd] = useState(false);
+  const [values, setValues] = useState({});
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [alignment, setAlignment] = React.useState('web');
+  const handleChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newAlignment: string,
+  ) => {
+    setAlignment(newAlignment);
+  };
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleDelete = () => {
+    console.info('You clicked the delete icon.');
+  };
 
+ 
+  const submitForm = (e) => {
+    setOpenAdd(false)
+   }
   const ExpandableTableRow = ({ children, expandComponent, ...otherProps }) => {
     const [isExpanded, setIsExpanded] = React.useState(false);
   
@@ -380,6 +403,7 @@ function Overview() {
                   disableRipple={true}
                   style={{height:'35px'}}
                   className="preve"
+                  onClick={() => setOpenAdd(true)}
                  >
                  Compose
                 </Button>
@@ -567,6 +591,7 @@ function Overview() {
                   disableElevation={true}
                   disableRipple={true}
                   style={{height:'35px'}}
+                  onClick={() => setOpenAdd2(true)}
                  >
                 + Add
                 </Button>
@@ -634,6 +659,19 @@ function Overview() {
                Download
                </ListItemText>
         </ListItem>
+
+        <ListItem className="list-item flex-start-center">
+          <ListItemText
+                primaryTypographyProps={{
+                  style: {
+                    fontWeight: 500,
+                    color: "inherit",
+                  },
+                }}
+               >
+               Delete
+               </ListItemText>
+        </ListItem>
       
        
         </List>
@@ -657,20 +695,37 @@ function Overview() {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Department </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Entity</TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Scheduled Interview</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">	Interview Type </TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Interviewer</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Hiring Manager</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Coordinator</TableCell>
+            <TableCell className="tablehead-14-roboto border-bottom-tab">Scheduled By</TableCell>
             
 
           </TableRow>
         </TableHead>
         <TableBody>
          
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">
+              <Typography>Feb 23, 2022</Typography>          
+              <Typography style={{fontSize:12, marginTop:5}}>16:30 To 17:30</Typography>
+                              
+              </TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Hiring Team Screen</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Sahud khan</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">
+              <ListItem alignItems="flex-start" style={{padding:0}}>
+ <ListItemAvatar style={{margin:0}}>
+ <Avatar alt="Travis Howard" src="/img/bitmap.png" />
+ </ListItemAvatar>
+ <ListItemText>
+ <Typography variant="body1" style={{fontSize:"14px", marginTop:10,}}>Robert F</Typography>
+  </ListItemText>
+</ListItem>
+               </TableCell>
          
          
         </TableBody>
@@ -714,27 +769,16 @@ function Overview() {
            
 </Grid>
 <Grid className="detailbox">
-      <Table className={classes.table}>
-        <TableHead>
-          <TableRow>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Department </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Entity</TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
-            
 
-          </TableRow>
-        </TableHead>
-        <TableBody>
-         
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
-         
-         
-        </TableBody>
-      </Table>
+<Grid item xs={6}>
+<TextField id="outlined-basic" label="Add tags" variant="outlined" className="w-100 mb-20" />
+</Grid>
+
+<Stack direction="row" spacing={1}>
+      <Chip label="Deletable" onDelete={handleDelete} />
+      <Chip label="Deletable" variant="outlined" onDelete={handleDelete} />
+    </Stack>
+
       </Grid>
 </Grid>
 
@@ -774,6 +818,85 @@ function Overview() {
       </Grid>
       </Grid>
  
+
+
+
+
+ 
+      <CustomModalfullwidth
+          open={openAdd}
+          cancelClicked={
+            () => {
+              setOpenAdd(false)
+            }
+          }
+          confirmClicked={
+            submitForm
+          }
+          // width="700px"
+          confirmText="Send"
+          name= "New Mail">
+          <div className="newmailid">
+          <Grid item xs={8} style={{margin:'auto'}}>
+          <FormBuilder size="xs" fields={[
+           { type: 'input', name: 'To', label: 'To', required: false },
+           { type: 'input', name: 'CC', label: 'cc', required: false },
+           { type: 'input', name: 'BCC', label: 'Bcc', required: false },
+           { type: 'input', name: 'Subject', label: 'Subject', required: false },
+         
+            ]} values={values} inputHandler={handleChange} />
+            
+            <Box  className="mt-30">
+            <CKEditor
+                    editor={ ClassicEditor }
+                   
+                    data=""
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        console.log( { event, editor, data } );
+                    } }
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
+                </Box>
+
+            </Grid></div>
+        </CustomModalfullwidth>
+
+
+
+
+        <CustomModal
+          open={openAdd2}
+          cancelClicked={
+            () => {
+              setOpenAdd2(false)
+            }
+          }
+          confirmClicked={
+            submitForm
+          }
+          width="380px"
+          confirmText="Upload"
+          name= "New Attachment">
+          <div className="">
+            <FormBuilder size="sm" fields={[
+              
+              { type: 'select', name: 'Department', label: 'Department', options:[{id:1,name:"Design"},{id:2,name:"Software"}], required: true },
+             
+             
+            ]} values={values} inputHandler={handleChange} />
+            
+            </div>
+        </CustomModal>
            
         </>
     )
