@@ -67,15 +67,18 @@ function Candidates() {
                 
              
               <Box >
+              <Link to="/AddNewCandidates" >
                 <Button
                   variant="contained"
                   color="secondary"
                   disableElevation={true}
                   disableRipple={true}
                   style={{height:'35px'}}
+                  
                  >
                   Add New
                 </Button>
+                </Link>
               </Box>
             </div>
           </Box>

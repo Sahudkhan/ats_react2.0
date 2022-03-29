@@ -23,6 +23,7 @@ import MyProfile from './pages/Profile/index';
 import CreateJob from "./pages/CreateJob";
 import JobDetails from "./pages/JobDetails";
 import CandidatesDetails from "./pages/Candidate/CandidatesDetails";
+import AddNewCandidates from "./pages/Candidate/AddNewCandidates";
 
 import { createTheme, ThemeProvider, alpha } from "@material-ui/core/styles";
 const secondaryColor = "rgba(51, 90, 255, 1)";
@@ -347,7 +348,7 @@ export default function App() {
         <Route path="/CreateJob" component={CreateJob} />
         <Route path="/JobDetails" component={JobDetails} />
         <Route path="/CandidatesDetails" component={CandidatesDetails} />
-       
+       <Route path="/AddNewCandidates" component={AddNewCandidates}/>
         <Route path="/" exact component={Dashboard} />
       </Switch>
 </Router>
