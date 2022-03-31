@@ -62,7 +62,7 @@ className="css-7551ie h-100 w-100"
               container
               justify="space-between"
               alignItems="center"
-              className="title-bar mb-20"
+              className="title-bar mb-20 mt-30"
             >
               <Grid
                 xs={12}
@@ -161,7 +161,7 @@ className="css-7551ie h-100 w-100"
 
     
        </Grid>
-         <Scrollbars style={{ height: "60vh" }}>
+         <Scrollbars style={{ height: "60vh", marginTop:'30px' }}>
       <TableContainer className="table-container-default table-container">
         <Table aria-label="table" size="small" className={classes.table}>
           <TableHead>
@@ -179,7 +179,7 @@ className="css-7551ie h-100 w-100"
            
           <TableRow className="bordernewcollumn">
          <TableCell className="tablebody-14-roboto border-bottom-tab">Screening</TableCell>
-         <TableCell className="tablebody-14-roboto border-bottom-tab">Completed </TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab"><Typography className="completed">Completed</Typography> </TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
@@ -189,14 +189,14 @@ className="css-7551ie h-100 w-100"
        </TableRow>
 
        <TableRow className="bordernewcollumn">
-         <TableCell className="tablebody-14-roboto border-bottom-tab">Screening</TableCell>
-         <TableCell className="tablebody-14-roboto border-bottom-tab">Completed </TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab">Shortlisting</TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab"><Typography className="pending">Pending Confirmation</Typography> </TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
           <Button><StarIcon style={{height:'20px', color:'#999',}}/><ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button className="ss">Schdule</Button>  
+          <Button className="preve">Schedule</Button>  
           </TableCell>
 
        </TableRow>

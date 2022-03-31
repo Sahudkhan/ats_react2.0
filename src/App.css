@@ -1165,3 +1165,6 @@ border-radius: 6px;
   justify-content: space-between;
   margin:0px 0px 15px 0px;
   border-radius: 4px;}
+
+.completed{color: #00CD37 !important;}
+.pending{color: #F3AF00 !important;}
