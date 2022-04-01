@@ -38,7 +38,7 @@ className="css-7551ie h-100 w-100"
               container
               justify="space-between"
               alignItems="center"
-              className="title-bar mb-20"
+              className="title-bar mb-20 mt-30"
             >
               <Grid
                 xs={12}
@@ -57,10 +57,18 @@ className="css-7551ie h-100 w-100"
          <Scrollbars style={{ height: "60vh" }}>
 
       <TableContainer className="table-container-default table-container">
-        <Table aria-label="table" size="small" className={classes.table}>
+        <Table aria-label="table" size="" className={classes.table}>
           <TableBody>
            
          <TableRow className="bordernewcollumn">
+         <TableCell className="tablebody-14-roboto border-bottom-tab">05 Jan, 2021</TableCell>
+         <TableCell className="tablebody-14-roboto border-bottom-tab">14:00:PM </TableCell>
+        <TableCell className="tablebody-14-roboto border-bottom-tab">Candidate Added in Job</TableCell>
+        <TableCell className="tablebody-14-roboto border-bottom-tab">Bessie Cooper</TableCell>
+
+       </TableRow>
+
+       <TableRow className="bordernewcollumn">
          <TableCell className="tablebody-14-roboto border-bottom-tab">05 Jan, 2021</TableCell>
          <TableCell className="tablebody-14-roboto border-bottom-tab">14:00:PM </TableCell>
         <TableCell className="tablebody-14-roboto border-bottom-tab">Candidate Added in Job</TableCell>

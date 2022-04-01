@@ -24,8 +24,8 @@ const CustomModalfullwidth = (props) => {
             <Box
               className="w-100 flex-between-center"
             >
-              <div style={{ display: "flex", justifyContent: "space-between",padding:"19px 30px", borderBottom:"1px solid #000", width: "100%", alignItems: "flex-start" }}>
-                <Typography variant="h2" style={{ flex: "1" }}>{props.name || " "}</Typography>
+              <div style={{ display: "flex", justifyContent: "space-between",padding:"17px 30px", borderBottom:"1px solid #EBECF0", width: "100%", alignItems: "flex-start" }}>
+                <Typography variant="h2" style={{ flex: "1", fontSize:'16px', marginTop:7 }}>{props.name || " "}</Typography>
                 <IconButton
                   onClick={() => {
                     props.cancelClicked()

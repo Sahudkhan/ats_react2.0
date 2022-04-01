@@ -24,7 +24,7 @@ import CreateJob from "./pages/CreateJob";
 import JobDetails from "./pages/JobDetails";
 import CandidatesDetails from "./pages/Candidate/CandidatesDetails";
 import AddNewCandidates from "./pages/Candidate/AddNewCandidates";
-
+import ScheduleInterview from "./pages/Candidate/ScheduleInterview"
 import { createTheme, ThemeProvider, alpha } from "@material-ui/core/styles";
 const secondaryColor = "rgba(51, 90, 255, 1)";
 const Custumtheme = createTheme({
@@ -349,6 +349,7 @@ export default function App() {
         <Route path="/JobDetails" component={JobDetails} />
         <Route path="/CandidatesDetails" component={CandidatesDetails} />
        <Route path="/AddNewCandidates" component={AddNewCandidates}/>
+       <Route path="/ScheduleInterview" component={ScheduleInterview}/>
         <Route path="/" exact component={Dashboard} />
       </Switch>
 </Router>

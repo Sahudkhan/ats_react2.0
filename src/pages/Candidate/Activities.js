@@ -8,7 +8,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Scrollbars from "react-custom-scrollbars";
 import DropDownHiring from "../../component/DropDownHiring";
-
+import CustomModalfullwidth from "../../component/customModalfullwidth";
+import FormBuilder, { MyTable } from "../../component/formBuilder";
 const useStyles = makeStyles({
   table: {
 fontSize:12,
@@ -35,7 +36,9 @@ fontSize:12,
 
 function Activities() {
   const classes = useStyles();
-  
+  const [openAdd, setOpenAdd] = useState(false);
+  const [openAdd2, setOpenAdd2] = useState(false);
+  const [values, setValues] = useState({});
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -47,7 +50,13 @@ function Activities() {
   const [initialMount, setInitialMount] = useState(true);
   const [selectByStatus, setSelectByStatus] = useState("Map Activity");
  
+  const submitForm = (e) => {
+    setOpenAdd(false)
+   }
 
+   const handleChange = (e) => {
+    console.log("target", e.target)
+  }
 
 
     return (
@@ -183,7 +192,7 @@ className="css-7551ie h-100 w-100"
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
+          <Button onClick={() => setOpenAdd(true)}><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">-</TableCell>
 
        </TableRow>
@@ -194,7 +203,7 @@ className="css-7551ie h-100 w-100"
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button><StarIcon style={{height:'20px', color:'#999',}}/><ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
+          <Button  onClick={() => setOpenAdd2(true)}><StarIcon style={{height:'20px', color:'#999',}}/><ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
           <Button className="preve">Schedule</Button>  
           </TableCell>
@@ -211,7 +220,59 @@ className="css-7551ie h-100 w-100"
  
      
         </Box>
-           
+
+        <CustomModalfullwidth
+          open={openAdd}
+          cancelClicked={
+            () => {
+              setOpenAdd(false)
+            }
+          }
+          confirmClicked={
+            submitForm
+          }
+          // width="700px"
+          confirmText="Submit"
+          name= "Schedule Interview">
+          <div className="p-5">
+          <FormBuilder size="md" fields={[
+           { type: 'input', name: 'RULE_NAME', label: 'Attribute Name', required: false },
+           { type: 'input', name: 'RULE_NAME', label: 'Applicable To', required: false },
+         
+            ]} values={values} inputHandler={handleChange} />
+            
+            </div>
+        </CustomModalfullwidth>
+
+
+        <CustomModalfullwidth
+          open={openAdd2}
+          cancelClicked={
+            () => {
+              setOpenAdd2(false)
+            }
+          }
+          confirmClicked={
+            submitForm
+          }
+          // width="700px"
+          confirmText="Submit"
+          name= "Ratings">
+          <div className="p-5">
+          <FormBuilder size="md" fields={[
+           { type: 'input', name: 'RULE_NAME', label: 'Attribute Name', required: false },
+           { type: 'input', name: 'RULE_NAME', label: 'Applicable To', required: false },
+         
+            ]} values={values} inputHandler={handleChange} />
+            
+            </div>
+        </CustomModalfullwidth>
+
+
+
+        
+
+
         </>
     )
 }

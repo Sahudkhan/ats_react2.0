@@ -48,10 +48,10 @@
     align-items: flex-start;
   }
   .button-custom-modal{
-    padding: 12px 25px;
+    padding: 10px 24px !important;
   }
   .button-confirm{
-    background-color: #335AFF;
+    background-color: #335AFF !important;
     color: #fff; 
   }
   /* Track */
