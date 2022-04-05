@@ -565,7 +565,7 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
           <Checkbox {...label} style={{padding:"0px 5px 0px 0px"}}/>
           </ListItemAvatar>
           <ListItemText>
-          <Typography variant="h6" > Rohit Sharma</Typography>
+          <Typography variant="h6" >Sahud</Typography>
             <Typography variant="body1"  > 
             ronit@zimyo.com
             </Typography>
@@ -604,7 +604,7 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
            },
          }}
         >
-        Remove from this job
+        Move To Onboarding
         </ListItemText>
  </ListItem>
 
@@ -617,7 +617,7 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
            },
          }}
         >
-       Mark as withdraw
+      Update Status
         </ListItemText>
  </ListItem>
 
@@ -630,7 +630,7 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
            },
          }}
         >
-     Reject
+    Remove From This Job
         </ListItemText>
  </ListItem>
 
@@ -643,7 +643,7 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
            },
          }}
         >
-     Messages
+    Add To Another Job
         </ListItemText>
  </ListItem>
 
@@ -656,23 +656,11 @@ style={{ width: openDrawer ? "calc(100% - 18.4vw)" : "100%" }}
            },
          }}
         >
-     Add to another job
+   Schedule Interview
         </ListItemText>
  </ListItem>
 
 
- <ListItem className="list-item flex-start-center">
-   <ListItemText
-         primaryTypographyProps={{
-           style: {
-             fontWeight: 500,
-             color: "inherit",
-           },
-         }}
-        >
-     Hold
-        </ListItemText>
- </ListItem>
 
 
  </List>

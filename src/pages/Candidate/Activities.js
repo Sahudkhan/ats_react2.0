@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Typography, Box, Button, List, ListItem, TableRow, ListItemText, LinearProgress, Popover, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
+import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
+import { Typography, Box, Button, List, ListItem, TableRow, TextField, TextareaAutosize, ListItemText, LinearProgress, Popover, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
 import StarIcon from '@mui/icons-material/Star';
 import Avatar from '@mui/material/Avatar';
+import Rating from '@mui/material/Rating';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import StarRateIcon from '@mui/icons-material/StarRate';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -192,7 +196,7 @@ className="css-7551ie h-100 w-100"
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button onClick={() => setOpenAdd(true)}><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
+          <Button onClick={() => setOpenAdd2(true)}><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">-</TableCell>
 
        </TableRow>
@@ -203,9 +207,9 @@ className="css-7551ie h-100 w-100"
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button  onClick={() => setOpenAdd2(true)}><StarIcon style={{height:'20px', color:'#999',}}/><ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
+          <Button  onClick={() => setOpenAdd(true)}><StarIcon style={{height:'20px', color:'#999',}}/><ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button className="preve">Schedule</Button>  
+          <Link to="/ScheduleInterview" style={{textDecoration:'none'}} ><Button className="preve">Schedule</Button></Link>  
           </TableCell>
 
        </TableRow>
@@ -233,14 +237,71 @@ className="css-7551ie h-100 w-100"
           }
           // width="700px"
           confirmText="Submit"
-          name= "Schedule Interview">
+          name= "Ratings">
+             <div className="newmailid">
+              <Grid item xs={8} style={{margin:'auto'}}>
           <div className="p-5">
-          <FormBuilder size="md" fields={[
-           { type: 'input', name: 'RULE_NAME', label: 'Attribute Name', required: false },
-           { type: 'input', name: 'RULE_NAME', label: 'Applicable To', required: false },
-         
-            ]} values={values} inputHandler={handleChange} />
+
+           <Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>Overall Rating</Typography> 
+            <div className="flex-center">
+            <Rating name="customized-10" defaultValue={2} max={10} />
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          multiline
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid> 
+       
+
+<Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>All Checks</Typography> 
+            <div className="flex-center">
+            <Rating name="customized-10" defaultValue={2} max={10} />
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          multiline
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid>
+
+<Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>Final</Typography> 
+            <div className="flex-center">
+            <Rating name="customized-10" defaultValue={2} max={10} />
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          multiline
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid>
             
+            </div>
+            </Grid>
             </div>
         </CustomModalfullwidth>
 
@@ -258,13 +319,95 @@ className="css-7551ie h-100 w-100"
           // width="700px"
           confirmText="Submit"
           name= "Ratings">
+           <div className="newmailid">
+              <Grid item xs={8} style={{margin:'auto'}}>
           <div className="p-5">
-          <FormBuilder size="md" fields={[
-           { type: 'input', name: 'RULE_NAME', label: 'Attribute Name', required: false },
-           { type: 'input', name: 'RULE_NAME', label: 'Applicable To', required: false },
-         
-            ]} values={values} inputHandler={handleChange} />
+
+           <Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>Overall Rating</Typography> 
+            <div className="flex-center">
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <StarRateIcon style={{color:'#F3AF00'}}/>
+      <Box>05</Box>
+    </Box>
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          aria-readonly
+          variant="outlined"
+          multiline
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid> 
+       
+
+<Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>All Checks</Typography> 
+            <div className="flex-center">
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <StarOutlineIcon/>
+      <Box>0</Box>
+    </Box>
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          multiline
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid>
+
+<Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>Final</Typography> 
+            <div className="flex-center">
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <StarOutlineIcon/>
+      <Box>0</Box>
+    </Box>
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          multiline
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid>
             
+            </div>
+            </Grid>
             </div>
         </CustomModalfullwidth>
 

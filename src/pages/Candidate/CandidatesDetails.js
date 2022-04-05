@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {BrowserRouter as Router, Switch, Route, Link, NavLink} from "react-router-dom";
 import { styled } from '@mui/system';
 import {Popover, List, Divider, Grid, ListItem, Card, MenuItem, ListItemText, Typography, Box,} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
@@ -75,9 +76,13 @@ function CandidatesDetails() {
         <>
          <Box className='w-100 flex-column'>
         <TabsUnstyled defaultValue={0}>
+          
        <Grid className="flex-between-center css-7551ie" style={{borderBottom:"1px solid #EBECF0"}}>
-       <Typography variant="h2"><ArrowBackIcon/> Candidates Details</Typography>
-           
+       <Box className='start-flex mt-10'>
+       <Link to="/Candidates" style={{textDecoration:'none'}} ><ArrowBackIcon style={{fontSize:'21px'}}/></Link>
+       <Typography variant="h6" style={{fontSize:'16px', fontWeight:'600', marginLeft:'7px', marginTop:'1px'}} >
+       Candidates Details</Typography>
+        </Box>
       <TabsList>
         <Tab>Overview</Tab>
         <Tab>Activities</Tab>

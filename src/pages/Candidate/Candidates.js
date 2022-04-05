@@ -5,6 +5,7 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Avatar from '@mui/material/Avatar';
 import FilterListIcon from "@material-ui/icons/FilterList";
 import DownloadIcon from '@mui/icons-material/Download';
+import UploadIcon from '@mui/icons-material/Upload';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Scrollbars from "react-custom-scrollbars";
@@ -50,7 +51,7 @@ function Candidates() {
               </Box>
 
               <Box  className="icon-cover flex-center mr-20">
-                  <DownloadIcon className="header-icon" />
+                  <UploadIcon className="header-icon" />
                 </Box>
 
                 <Box  className="icon-cover flex-center mr-20">

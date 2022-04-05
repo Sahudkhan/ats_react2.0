@@ -14,6 +14,7 @@ body {
 	background: #fff;
 	overflow: hidden;
 }
+a{text-decoration: none !important;}
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -1127,8 +1128,7 @@ border-radius: 6px;
 
   .newmailid {
     overflow-y: auto;
-    height: calc(100vh - 200px);
-    padding-top: 20px;
+    height: calc(100vh - 190px);
     overflow-x: hidden;
 }
 
@@ -1168,3 +1168,10 @@ border-radius: 6px;
 
 .completed{color: #00CD37 !important;}
 .pending{color: #F3AF00 !important;}
+
+.footer_popup{
+  border-top: 1px solid #EBECF0;
+  padding: 15px 0px;
+  text-align: right;
+  margin: auto  !important;
+}

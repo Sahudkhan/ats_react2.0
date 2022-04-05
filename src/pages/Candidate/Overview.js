@@ -536,31 +536,16 @@ function Overview() {
            
 </Grid>
 <Grid className="detailbox">
-      <Table className={classes.table}>
-        <TableHead>
-          <TableRow>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Documents </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Upload Date </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">	Upload By</TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">&nbsp;	</TableCell>
-            
-
-          </TableRow>
-        </TableHead>
-        <TableBody>
-         
-              <TableCell className="tablehead-14-roboto border-bottom-tab"><PictureAsPdfIcon/> 2022_01_11_02:53:54_NirajCv-10-12-2021.pdf</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">	Jan 11, 2022</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
-         
-         
-        </TableBody>
-      </Table>
+      <Typography  className="mb-20">
+       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+       has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
+       took a galley of type and scrambled it to make a type specimen book. 
+      </Typography>
 
       <CKEditor
                     editor={ ClassicEditor }
                     data=""
+                   
                     onReady={ editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log( 'Editor is ready to use!', editor );

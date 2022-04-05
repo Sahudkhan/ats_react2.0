@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import {BrowserRouter as Link,} from "react-router-dom";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { TextField, Paper, Divider, Select, InputLabel, MenuItem, Grid, FormControl, RadioGroup, Radio, FormControlLabel, FormLabel, Typography, Box } from '@material-ui/core';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
+import Clear from "@material-ui/icons/Clear";
+import IconButton from "@material-ui/core/IconButton";
 import Scrollbars from "react-custom-scrollbars";
 import CandidateBasicDetails from './CandidateBasicDetails';
 import CandidateAdvanceDetails from './CandidateAdvanceDetails';
@@ -76,8 +79,26 @@ function AddNewCandidates() {
     return (
         <>
 
+<Grid className="flex-between-center" style={{borderBottom:"1px solid #EBECF0", padding:'18px 64px 16px 64px'}}>
+ <Typography variant="h6" style={{fontSize:'18px', fontWeight:'600',}} >
+ Create New Candidate</Typography>
+
+        <Box className="flex-center">
+          <Link to="/Candidates">
+        <IconButton
+                  size="small"
+                  color="primary"
+                  
+                >
+                  <Clear />
+                </IconButton>
+                </Link>
+        </Box>
+        
+     </Grid>
  <Grid className="steppermain">
-        <Box sx={{ width: '100%' }}>
+
+   <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps = {};
