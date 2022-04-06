@@ -56,6 +56,8 @@ function Overview() {
   const [isEdit, setisEdit] = useState(false);
   const [openAdd2, setOpenAdd2] = useState(false)
   const [openAdd, setOpenAdd] = useState(false);
+  const [openLog, setOpenLog] = useState(false);
+  
   const [values, setValues] = useState({});
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [alignment, setAlignment] = React.useState('web');
@@ -486,6 +488,7 @@ function Overview() {
                   disableElevation={true}
                   disableRipple={true}
                   style={{height:'35px'}}
+                  onClick={() => setOpenLog(true)}
                  >
                  Log Calls
                 </Button>
@@ -822,12 +825,65 @@ function Overview() {
           confirmText="Send"
           name= "New Mail">
           <div className="newmailid">
-          <Grid item xs={8} style={{margin:'auto'}}>
+          <Grid item xs={7} style={{margin:'auto'}}>
           <FormBuilder size="xs" fields={[
+           { type: 'select', name: 'template', label: 'Select Template', options:[{id:1,name:"Design"},{id:2,name:"Software"}], required: true },
            { type: 'input', name: 'To', label: 'To', required: false },
            { type: 'input', name: 'CC', label: 'cc', required: false },
            { type: 'input', name: 'BCC', label: 'Bcc', required: false },
            { type: 'input', name: 'Subject', label: 'Subject', required: false },
+         
+            ]} values={values} inputHandler={handleChange} />
+            
+            <Box  className="mt-30">
+            <CKEditor
+                    editor={ ClassicEditor }
+                   
+                    data=""
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        console.log( { event, editor, data } );
+                    } }
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
+                </Box>
+
+            </Grid></div>
+        </CustomModalfullwidth>
+
+
+
+        <CustomModalfullwidth
+          open={openLog}
+          cancelClicked={
+            () => {
+              setOpenLog(false)
+            }
+          }
+          confirmClicked={
+            submitForm
+          }
+          // width="700px"
+          confirmText="Send"
+          name= "Call Log">
+          <div className="newmailid">
+          <Grid item xs={7} style={{margin:'auto'}}>
+          <FormBuilder size="lg" fields={[
+           { type: 'select', name: 'template', label: 'Select Job', options:[{id:1,name:"Design"},{id:2,name:"Software"}], required: true },
+           { type: 'select', name: 'response', label: 'Select Response', options:[{id:1,name:"Design"},{id:2,name:"Software"}], required: true },
+           { type: 'date', name: 'Date', label: 'Select Date', required: false },
+           { type: 'time', name: 'time', label: 'start Time', required: false },
+           { type: 'time', name: 'time', label: 'End Time', required: false },
+         
          
             ]} values={values} inputHandler={handleChange} />
             
