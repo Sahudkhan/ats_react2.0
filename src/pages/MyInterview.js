@@ -305,7 +305,8 @@ const [values, setValues] = useState({});
  anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 >
 <List className="list-popover">
- <ListItem className="list-item flex-start-center"    onClick={() => setOpenAdd(true)}>
+<Link to="/ScheduleInterview" style={{textDecoration:'none'}} >
+ <ListItem className="list-item flex-start-center" >
    <ListItemText
      
          primaryTypographyProps={{
@@ -317,7 +318,9 @@ const [values, setValues] = useState({});
         >
        Re-schedule Interview
         </ListItemText>
+       
  </ListItem>
+ </Link>
 
  <ListItem className="list-item flex-start-center">
    <ListItemText

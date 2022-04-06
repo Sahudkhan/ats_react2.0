@@ -24,7 +24,7 @@ import CreateJob from "./pages/CreateJob";
 import JobDetails from "./pages/JobDetails";
 import CandidatesDetails from "./pages/Candidate/CandidatesDetails";
 import AddNewCandidates from "./pages/Candidate/AddNewCandidates";
-import ScheduleInterview from "./pages/Candidate/ScheduleInterview"
+import ScheduleInterview from "./pages/ScheduleInterview"
 import { createTheme, ThemeProvider, alpha } from "@material-ui/core/styles";
 const secondaryColor = "rgba(51, 90, 255, 1)";
 const Custumtheme = createTheme({

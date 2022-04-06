@@ -41,7 +41,6 @@ fontSize:12,
 function Activities() {
   const classes = useStyles();
   const [openAdd, setOpenAdd] = useState(false);
-  const [openAdd2, setOpenAdd2] = useState(false);
   const [values, setValues] = useState({});
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -184,7 +183,7 @@ className="css-7551ie h-100 w-100"
              <TableCell className="tablehead-14-roboto border-bottom-tab">Completed Date</TableCell>
              <TableCell className="tablehead-14-roboto border-bottom-tab">Acted By</TableCell>
              <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
-             <TableCell className="tablehead-14-roboto border-bottom-tab">Action</TableCell>
+           
          
             </TableRow>
           </TableHead>
@@ -196,8 +195,9 @@ className="css-7551ie h-100 w-100"
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button onClick={() => setOpenAdd2(true)}><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
-          <TableCell className="tablebody-14-roboto border-bottom-tab">-</TableCell>
+          <Button onClick={() => setOpenAdd(true)}><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button>
+          </TableCell>
+
 
        </TableRow>
 
@@ -207,9 +207,7 @@ className="css-7551ie h-100 w-100"
           <TableCell className="tablebody-14-roboto border-bottom-tab">12 Jun 2021</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">Brooklyn Simmons</TableCell>
           <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Button  onClick={() => setOpenAdd(true)}><StarIcon style={{height:'20px', color:'#999',}}/><ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button></TableCell>
-          <TableCell className="tablebody-14-roboto border-bottom-tab">
-          <Link to="/ScheduleInterview" style={{textDecoration:'none'}} ><Button className="preve">Schedule</Button></Link>  
+          <Button onClick={() => setOpenAdd(true)}><StarIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button>
           </TableCell>
 
        </TableRow>
@@ -225,92 +223,12 @@ className="css-7551ie h-100 w-100"
      
         </Box>
 
+
         <CustomModalfullwidth
           open={openAdd}
           cancelClicked={
             () => {
               setOpenAdd(false)
-            }
-          }
-          confirmClicked={
-            submitForm
-          }
-          // width="700px"
-          confirmText="Submit"
-          name= "Ratings">
-             <div className="newmailid">
-              <Grid item xs={8} style={{margin:'auto'}}>
-          <div className="p-5">
-
-           <Grid className="mb-20">
-          <Box className="w-100 flex-between-center mb-15">
-          <Typography>Overall Rating</Typography> 
-            <div className="flex-center">
-            <Rating name="customized-10" defaultValue={2} max={10} />
-           </div>
-          </Box>
-
-      <TextField
-          id="outlined-multiline-static"
-          label="Remarks*"
-          variant="outlined"
-          multiline
-          rows={4}
-          fullWidth
-          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-        />
-</Grid> 
-       
-
-<Grid className="mb-20">
-          <Box className="w-100 flex-between-center mb-15">
-          <Typography>All Checks</Typography> 
-            <div className="flex-center">
-            <Rating name="customized-10" defaultValue={2} max={10} />
-           </div>
-          </Box>
-
-      <TextField
-          id="outlined-multiline-static"
-          label="Remarks*"
-          variant="outlined"
-          multiline
-          rows={4}
-          fullWidth
-          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-        />
-</Grid>
-
-<Grid className="mb-20">
-          <Box className="w-100 flex-between-center mb-15">
-          <Typography>Final</Typography> 
-            <div className="flex-center">
-            <Rating name="customized-10" defaultValue={2} max={10} />
-           </div>
-          </Box>
-
-      <TextField
-          id="outlined-multiline-static"
-          label="Remarks*"
-          variant="outlined"
-          multiline
-          rows={4}
-          fullWidth
-          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
-        />
-</Grid>
-            
-            </div>
-            </Grid>
-            </div>
-        </CustomModalfullwidth>
-
-
-        <CustomModalfullwidth
-          open={openAdd2}
-          cancelClicked={
-            () => {
-              setOpenAdd2(false)
             }
           }
           confirmClicked={
@@ -342,8 +260,8 @@ className="css-7551ie h-100 w-100"
       <TextField
           id="outlined-multiline-static"
           label="Remarks*"
-          aria-readonly
           variant="outlined"
+          disabled="isDisabled"
           multiline
           rows={4}
           fullWidth
@@ -373,6 +291,7 @@ className="css-7551ie h-100 w-100"
           label="Remarks*"
           variant="outlined"
           multiline
+          disabled="isDisabled"
           rows={4}
           fullWidth
           defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
@@ -400,6 +319,7 @@ className="css-7551ie h-100 w-100"
           label="Remarks*"
           variant="outlined"
           multiline
+          disabled="isDisabled"
           rows={4}
           fullWidth
           defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."

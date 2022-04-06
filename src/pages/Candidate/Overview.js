@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Typography, Box, ListItem, TableRow, Button, TextField, Chip, Accordion, AccordionSummary, AccordionDetails, Popover, LinearProgress, List, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
@@ -7,6 +7,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Scrollbars from "react-custom-scrollbars";
+// import ScrollSpy from "react-ui-scrollspy";
+import Scrollspy from 'react-scrollspy';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -19,6 +21,7 @@ import DropDownHiring from "../../component/DropDownHiring";
 import FormBuilder, { MyTable } from "../../component/formBuilder";
 import CustomModal from "../../component/customModal"
 import CustomModalfullwidth from "../../component/customModalfullwidth";
+import Center from "../../component/Center/Center"
 const useStyles = makeStyles({
   table: {
 fontSize:12,
@@ -41,17 +44,12 @@ fontSize:12,
 })(LinearProgress);
 
 
-function Overview() {
+function Overview(props){
   const classes = useStyles();
   const [initialMount, setInitialMount] = useState(true);
   const [selectByStatus, setSelectByStatus] = useState("Map Activity");
   const [selectedIndex, setSelectedIndex] = React.useState(1);
-  const handleListItemClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    index: number,
-  ) => {
-    setSelectedIndex(index);
-  };
+
 
   const [isEdit, setisEdit] = useState(false);
   const [openAdd2, setOpenAdd2] = useState(false)
@@ -109,88 +107,43 @@ function Overview() {
     return (
         <>
      
-
-
     <Grid container spacing={3} className="main-screen">
+
+
+
+
+
+
+
+
+
       <Grid item xs={2} style={{ padding: "3.68vh 0px 0px 64px", minHeight:"100%" }}>
-      <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <List component="nav" className="sahudd" aria-label="main mailbox folders" style={{borderLeft:'1px solid #EBECF0'}}>
-        <ListItemButton
-        className="leftbutn"
-          selected={selectedIndex === 0}
-          onClick={(event) => handleListItemClick(event, 0)}
-        >
-          <ListItemText primary="Details" />
-        </ListItemButton>
-        <ListItemButton
-         className="leftbutn"
-          selected={selectedIndex === 1}
-          onClick={(event) => handleListItemClick(event, 1)}
-        >
-          <ListItemText primary="Emails" />
-        </ListItemButton>
+      <div className="sahudd" style={{borderLeft:'1px solid #EBECF0'}}>
+      <Scrollspy items={ ['section-1', 'section-2', 'section-3', 'section-4', 'section-5', 'section-6', 'section-7', 'section-8', 'section-9'] } currentClassName="is-current">
+      
+    
+        
+  <li ><a href="#section-1">Details</a></li>
+  <li><a href="#section-2">Emails</a></li>
+  <li><a href="#section-3">Calls</a></li>
+  <li ><a href="#section-4">Notes</a></li>
+  <li><a href="#section-5">Attachment</a></li>
+  <li><a href="#section-6">Interviews</a></li>
+  <li ><a href="#section-7">Reviews</a></li>
+  <li><a href="#section-8">Tags</a></li>
+  <li><a href="#section-9">Feedback</a></li>
 
-        <ListItemButton
-         className="leftbutn"
-          selected={selectedIndex === 2}
-          onClick={(event) => handleListItemClick(event, 2)}
-        >
-          <ListItemText primary="Calls" />
-        </ListItemButton>
+     
+  
+</Scrollspy>
 
-        <ListItemButton
-         className="leftbutn"
-          selected={selectedIndex === 3}
-          onClick={(event) => handleListItemClick(event, 3)}
-        >
-          <ListItemText primary="Notes" />
-        </ListItemButton>
-
-        <ListItemButton
-         className="leftbutn"
-          selected={selectedIndex === 4}
-          onClick={(event) => handleListItemClick(event, 4)}
-        >
-          <ListItemText primary="Attachments" />
-        </ListItemButton>
-
-        <ListItemButton
-          selected={selectedIndex === 5}
-          onClick={(event) => handleListItemClick(event, 5)}
-        >
-          <ListItemText primary="Interviews" />
-        </ListItemButton>
-
-        <ListItemButton
-         className="leftbutn"
-          selected={selectedIndex === 6}
-          onClick={(event) => handleListItemClick(event, 6)}
-        >
-          <ListItemText primary="Reviews" />
-        </ListItemButton>
-
-        <ListItemButton
-         className="leftbutn"
-          selected={selectedIndex === 7}
-          onClick={(event) => handleListItemClick(event, 7)}
-        >
-          <ListItemText primary="Tags" />
-        </ListItemButton>
-
-        <ListItemButton
-         className="leftbutn"
-          selected={selectedIndex === 8}
-          onClick={(event) => handleListItemClick(event, 8)}
-        >
-          <ListItemText primary="Feedback" />
-        </ListItemButton>
-      </List>
-   
-    </Box>
+</div>
+      
         </Grid>
       
       <Grid item xs={10}>
         <Grid className="analyticmain">
+        <section id="section-1">
       <Typography variant="subtitle1" className="mb-20">
                 Profile
         </Typography>
@@ -393,7 +346,9 @@ function Overview() {
         </Grid>
 
         </Grid>
+        </section>
 
+        <section id="section-2">
         <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">Emails </Typography>
@@ -475,9 +430,10 @@ function Overview() {
         </AccordionDetails>
       </Accordion>
       </Grid>
+</section>
 
 
-
+<section id="section-3">
       <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">Calls </Typography>
@@ -531,8 +487,9 @@ function Overview() {
       </Table>
       </Grid>
 </Grid>
+</section>
 
-
+<section id="section-4">
 <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">Notes </Typography>
@@ -567,8 +524,9 @@ function Overview() {
 
       </Grid>
 </Grid>
+</section>
 
-
+<section id="section-5">
 <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">Attachment </Typography>
@@ -673,7 +631,9 @@ function Overview() {
       </Table>
       </Grid>
 </Grid>
+</section>
 
+<section id="section-6">
 <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">Interviews </Typography>
@@ -720,7 +680,9 @@ function Overview() {
       </Table>
       </Grid>
 </Grid>
+</section>
 
+<section id="section-7">
 <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">Reviews </Typography>
@@ -750,7 +712,9 @@ function Overview() {
       </Table>
       </Grid>
 </Grid>
+</section>
 
+<section id="section-9">
 <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">Tags </Typography>
@@ -769,8 +733,9 @@ function Overview() {
 
       </Grid>
 </Grid>
+</section>
 
-
+<section id="section-8">
 <Grid className="maincanidbox">
        <Grid className="w-100 flex-between-center mb-20">
             <Typography variant="body2">FeedBack </Typography>
@@ -800,7 +765,7 @@ function Overview() {
       </Table>
       </Grid>
 </Grid>
-
+</section>
 
       </Grid>
       </Grid>

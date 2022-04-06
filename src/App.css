@@ -1108,9 +1108,31 @@ border-radius: 6px;
   .leftbutn{
     margin:15px 0px !important ;
   }
-  .sahudd .css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root.Mui-selected{
-    border-left: 1px solid #335AFF;
-    background: transparent !important;
+  .sahudd ul {
+    padding: 0;
+  }
+  .sahudd ul li{
+    list-style: none;
+    /* padding-left: 15px; */
+    border-left: 1px solid #ccc;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 20px;
+  }
+
+  .sahudd ul li a{color: #172B4D;
+    padding: 5px 15px;
+    line-height: 35px;
+    margin-left: -1px;
+    margin-top: -1px !important;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Poppins, sans-serif !important;
+    border-left: 1px solid #EBECF0;}
+
+    .sahudd li.is-current a {
+      color: #335AFF;
+      border-left: 1px solid #335AFF;
   }
   .maincanidbox{
     clear: both;
