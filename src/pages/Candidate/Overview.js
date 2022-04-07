@@ -2,12 +2,16 @@ import React, { useState, useRef } from "react";
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { Typography, Box, ListItem, TableRow, Button, TextField, Chip, Accordion, AccordionSummary, AccordionDetails, Popover, LinearProgress, List, ListItemText, ListItemAvatar, TableHead, TableContainer, Table, TableCell, TableBody, Grid} from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Scrollbars from "react-custom-scrollbars";
+import SendIcon from '@mui/icons-material/Send';
 // import ScrollSpy from "react-ui-scrollspy";
+import StarRateIcon from '@mui/icons-material/StarRate';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Scrollspy from 'react-scrollspy';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -21,7 +25,7 @@ import DropDownHiring from "../../component/DropDownHiring";
 import FormBuilder, { MyTable } from "../../component/formBuilder";
 import CustomModal from "../../component/customModal"
 import CustomModalfullwidth from "../../component/customModalfullwidth";
-import Center from "../../component/Center/Center"
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
 const useStyles = makeStyles({
   table: {
 fontSize:12,
@@ -54,6 +58,8 @@ function Overview(props){
   const [isEdit, setisEdit] = useState(false);
   const [openAdd2, setOpenAdd2] = useState(false)
   const [openAdd, setOpenAdd] = useState(false);
+  const [OpenAddRating, setOpenAddRating] = useState(false);
+
   const [openLog, setOpenLog] = useState(false);
   
   const [values, setValues] = useState({});
@@ -440,13 +446,10 @@ function Overview(props){
             <Grid className="flex-center">
             <Button
                   variant="contained"
-                  color="secondary"
-                  disableElevation={true}
-                  disableRipple={true}
-                  style={{height:'35px'}}
+                  className="btnlintype"
                   onClick={() => setOpenLog(true)}
                  >
-                 Log Calls
+                + Call Log
                 </Button>
  </Grid>
 </Grid>
@@ -496,12 +499,25 @@ function Overview(props){
            
 </Grid>
 <Grid className="detailbox">
+    
+      <Box>
+            <ListItem alignItems="flex-start" style={{padding:0, marginBottom:10}}>
+        <ListItemAvatar className="m-0">
+        <Avatar alt="Travis Howard" src="/img/bitmap.png" />
+        </ListItemAvatar>
+        <ListItemText>
+        <Typography variant="h6" style={{fontSize:"16px", marginBottom:2,}}> Sahud Khan</Typography>
+         <Typography variant="body1">alma.lawson@example.com</Typography>
+        
+         </ListItemText>
+         
+      </ListItem>  
       <Typography  className="mb-20">
        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
        has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
        took a galley of type and scrambled it to make a type specimen book. 
-      </Typography>
-
+      </Typography> 
+      </Box>
       <CKEditor
                     editor={ ClassicEditor }
                     data=""
@@ -522,6 +538,9 @@ function Overview(props){
                     } }
                 />
 
+
+<Box className="mt-20 text-right">
+<Button variant="outlined"><SendIcon sx={{ color:'#335AFF' }} /></Button></Box>
       </Grid>
 </Grid>
 </section>
@@ -533,10 +552,7 @@ function Overview(props){
             <Grid className="flex-center">
             <Button
                   variant="contained"
-                  color="secondary"
-                  disableElevation={true}
-                  disableRipple={true}
-                  style={{height:'35px'}}
+                  className="btnlintype"
                   onClick={() => setOpenAdd2(true)}
                  >
                 + Add
@@ -557,11 +573,12 @@ function Overview(props){
         </TableHead>
         <TableBody>
          
-              <TableCell className="tablehead-14-roboto border-bottom-tab"><PictureAsPdfIcon/> 2022_01_11_02:53:54_NirajCv-10-12-2021.pdf</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">
+                <Box style={{display:'flex', alignItems:'center'}}><PictureAsPdfIcon style={{color:'#ff0000', marginRight:'10'}}/> 2022_01_11_02:53:54_NirajCv-10-12-2021.pdf </Box></TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">	Jan 11, 2022</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">
-              <Grid className="flex-center">
+              <Grid className="start-flex">
             <Box>
           <IconButton 
            onClick={handleClick}
@@ -661,7 +678,15 @@ function Overview(props){
                               
               </TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">Hiring Team Screen</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">
+              <AvatarGroup max={4} className="start-flex">
+      <Avatar alt="Remy Sharp" src="/img/bitmap.png" />
+      <Avatar alt="Travis Howard" src="/img/bitmap2.png" />
+      <Avatar alt="Cindy Baker" src="/img/bitmap.png" />
+      <Avatar alt="Agnes Walker" src="/img/bitmap2.png" />
+      <Avatar alt="Trevor Henderson" src="/img/bitmap.png" />
+    </AvatarGroup>
+</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">Sahud khan</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">
@@ -689,27 +714,36 @@ function Overview(props){
            
 </Grid>
 <Grid className="detailbox">
-      <Table className={classes.table}>
-        <TableHead>
-          <TableRow>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Job Title </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Department </TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Entity</TableCell>
-            <TableCell className="tablehead-14-roboto border-bottom-tab">Ratings</TableCell>
-            
 
-          </TableRow>
-        </TableHead>
-        <TableBody>
-         
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
-         
-         
-        </TableBody>
-      </Table>
+<Box>
+            <ListItem alignItems="flex-start" style={{padding:0, marginBottom:'10px'}}>
+        <ListItemAvatar className="m-0">
+        <Avatar alt="Travis Howard" src="/img/bitmap.png" />
+        </ListItemAvatar>
+        <ListItemText>
+        <Typography variant="h6" style={{fontSize:"16px", marginBottom:2,}}> Sahud Khan</Typography>
+         <Typography variant="body1">alma.lawson@example.com</Typography>
+        
+         </ListItemText>
+      </ListItem>   
+      </Box>
+      <Divider/>
+      <Box className="w-100 flex-between-center mt-10">
+          <Typography>Overall Rating</Typography> 
+            <div className="flex-center">
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <StarRateIcon style={{color:'#F3AF00'}}/>
+      <Box>05</Box>
+    </Box>
+           </div>
+      </Box>
+      
+     
       </Grid>
 </Grid>
 </section>
@@ -758,7 +792,9 @@ function Overview(props){
               <TableCell className="tablehead-14-roboto border-bottom-tab">Web Designer</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">Hr</TableCell>
               <TableCell className="tablehead-14-roboto border-bottom-tab">Manisha Singh</TableCell>
-              <TableCell className="tablehead-14-roboto border-bottom-tab">2022-03-24</TableCell>
+              <TableCell className="tablehead-14-roboto border-bottom-tab">
+              <Button onClick={() => setOpenAddRating(true)}><StarRateIcon style={{height:'20px', color:'#e4d908', marginRight:4}}/> 4 <ArrowForwardIosIcon style={{ height:'14px', color:'#000'}}/></Button>
+              </TableCell>
          
          
         </TableBody>
@@ -877,6 +913,113 @@ function Overview(props){
             </Grid></div>
         </CustomModalfullwidth>
 
+
+        <CustomModalfullwidth
+          open={OpenAddRating}
+          cancelClicked={
+            () => {
+              setOpenAddRating(false)
+            }
+          }
+          confirmClicked={
+            submitForm
+          }
+          // width="700px"
+          confirmText="Submit"
+          name= "Ratings">
+           <div className="newmailid">
+              <Grid item xs={8} style={{margin:'auto'}}>
+          <div className="p-5">
+
+           <Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>Overall Rating</Typography> 
+            <div className="flex-center">
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <StarRateIcon style={{color:'#F3AF00'}}/>
+      <Box>05</Box>
+    </Box>
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          disabled="isDisabled"
+          multiline
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid> 
+       
+
+<Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>All Checks</Typography> 
+            <div className="flex-center">
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <StarOutlineIcon/>
+      <Box>0</Box>
+    </Box>
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          multiline
+          disabled="isDisabled"
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid>
+
+<Grid className="mb-20">
+          <Box className="w-100 flex-between-center mb-15">
+          <Typography>Final</Typography> 
+            <div className="flex-center">
+            <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <StarOutlineIcon/>
+      <Box>0</Box>
+    </Box>
+           </div>
+          </Box>
+
+      <TextField
+          id="outlined-multiline-static"
+          label="Remarks*"
+          variant="outlined"
+          multiline
+          disabled="isDisabled"
+          rows={4}
+          fullWidth
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+        />
+</Grid>
+            
+            </div>
+            </Grid>
+            </div>
+        </CustomModalfullwidth>
 
 
 

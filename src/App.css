@@ -323,7 +323,16 @@ a{text-decoration: none !important;}
   justify-content: flex-start;
   align-items: flex-end;
 }
-
+.text-right{
+  text-align: right;
+}
+.btnlintype{
+  height: 35px !important;
+    background: transparent !important;
+    color: rgb(51, 90, 255) !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
 .flex-center {
   display: flex !important;
   justify-content: center;
@@ -1128,7 +1137,7 @@ border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
     font-family: Poppins, sans-serif !important;
-    border-left: 1px solid #EBECF0;}
+    }
 
     .sahudd li.is-current a {
       color: #335AFF;
